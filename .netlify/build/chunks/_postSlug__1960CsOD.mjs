@@ -1,8 +1,8 @@
 /* empty css                         */
-import { c as createComponent, r as renderTemplate, d as renderComponent, b as createAstro, m as maybeRenderHead, a as addAttribute, F as Fragment, u as unescapeHTML } from './astro/server_5i4brpgU.mjs';
+import { c as createComponent, r as renderTemplate, f as renderComponent, b as createAstro, m as maybeRenderHead, a as addAttribute, F as Fragment, u as unescapeHTML } from './astro/server_CSZ1XmLG.mjs';
 import 'kleur/colors';
 import { Query } from 'appwrite';
-import { d as databases, a as $$Layout, $ as $$Container } from './Layout_iYsHysu5.mjs';
+import { d as databases, a as $$Layout, $ as $$Container } from './Layout_YDuo5igR.mjs';
 
 const $$Astro = createAstro();
 const $$postSlug = createComponent(async ($$result, $$props, $$slots) => {

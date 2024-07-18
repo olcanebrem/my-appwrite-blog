@@ -2,10 +2,10 @@
 import { ID } from 'appwrite';
 import { marked } from 'marked';
 
-import { databases } from '@/lib/appwrite';
+import { databases } from '@lib/appwrite';
 
-import Layout from '@/layouts/Layout.astro';
-import Container from '@/components/Container.astro';
+import Layout from '@layouts/Layout.astro';
+import Container from '@components/Container.astro';
 
 if ( Astro.request.method === "POST" ) {
   const formData = await Astro.request.formData();

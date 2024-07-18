@@ -1,5 +1,5 @@
 import { Client, Databases } from 'appwrite';
-import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as addAttribute, e as renderSlot, b as createAstro, d as renderComponent, f as renderHead } from './astro/server_5i4brpgU.mjs';
+import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as addAttribute, d as renderSlot, b as createAstro, f as renderComponent, e as renderHead } from './astro/server_CSZ1XmLG.mjs';
 import 'kleur/colors';
 import 'clsx';
 /* empty css                         */
@@ -7,6 +7,11 @@ import 'clsx';
 const client = new Client();
 const databases = new Databases(client);
 client.setEndpoint("https://cloud.appwrite.io/v1").setProject("667eeaf9002912d4f3ab");
+try {
+  session = await account.getSession("current");
+} catch (e) {
+  console.log("Session not registered");
+}
 
 const $$Astro$3 = createAstro();
 const $$Container = createComponent(($$result, $$props, $$slots) => {
