@@ -1,6 +1,6 @@
 ---
-import Nav from '@/components/Nav.astro';
-import Footer from '@/components/Footer.astro';
+import Nav from '@components/Nav.astro';
+import Footer from '@components/Footer.astro';
 
 interface Props {
 	title: string;
@@ -31,6 +31,6 @@ const { title = 'My Blog' } = Astro.props;
 <style is:global>
 	html {
 		font-family: system-ui, sans-serif;
-		background: #fff;
+		background: #2c2c2c;
 	}
 </style>

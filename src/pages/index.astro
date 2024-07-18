@@ -1,8 +1,8 @@
 ---
-import { databases } from '@/lib/appwrite';
+import { databases } from '@lib/appwrite';
 
-import Layout from '@/layouts/Layout.astro';
-import Container from '@/components/Container.astro';
+import Layout from '@layouts/Layout.astro';
+import Container from '@components/Container.astro';
 
 const { documents: posts } = await databases.listDocuments(
   import.meta.env.PUBLIC_APPWRITE_DATABASE_ID,
