@@ -1,7 +1,7 @@
 /* empty css                         */
 import { c as createComponent, r as renderTemplate, f as renderComponent, m as maybeRenderHead, a as addAttribute } from './astro/server_CSZ1XmLG.mjs';
 import 'kleur/colors';
-import { d as databases, $ as $$Container, a as $$Layout } from './Layout_YDuo5igR.mjs';
+import { d as databases, $ as $$Container, a as $$Layout } from './Layout_Dl2C_gf4.mjs';
 
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {
   const { documents: posts } = await databases.listDocuments(

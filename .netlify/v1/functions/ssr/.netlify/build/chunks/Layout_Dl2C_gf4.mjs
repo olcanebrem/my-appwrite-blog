@@ -7,11 +7,6 @@ import 'clsx';
 const client = new Client();
 const databases = new Databases(client);
 client.setEndpoint("https://cloud.appwrite.io/v1").setProject("667eeaf9002912d4f3ab");
-try {
-  session = await account.getSession("current");
-} catch (e) {
-  console.log("Session not registered");
-}
 
 const $$Astro$3 = createAstro();
 const $$Container = createComponent(($$result, $$props, $$slots) => {
