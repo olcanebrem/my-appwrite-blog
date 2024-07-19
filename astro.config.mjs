@@ -6,13 +6,6 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  redirects: [
-    {
-      source: '/logout',
-      destination: '/index',
-      status: 301 // Kalıcı yönlendirme
-    }
-  ],
   integrations: [tailwind()],
   output: 'server',
   adapter: netlify()

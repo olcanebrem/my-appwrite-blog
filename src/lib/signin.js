@@ -61,18 +61,3 @@ if(session) {
     });
 }
 
-export async function getSessionUsername() {
-try {
-    
-    // Kullanıcı bilgilerini alın
-    const user = await account.get(); 
-    
-    // Kullanıcı bilgilerini işleyin
-    const username = user.name || 'Guest'; 
-    
-    document.getElementById('username-display').textContent = `Welcome, ${username}`;
-} catch (error) {
-    console.log('Error fetching user info:', error);
-  }
-}
-    

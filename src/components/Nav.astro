@@ -1,7 +1,6 @@
 ---
 import Container from '@components/Container.astro';
 import Button from "@components/LogoutButton.astro";
-import { deleteSession } from "../lib/logout";
 
 
 ---
@@ -26,14 +25,14 @@ import { deleteSession } from "../lib/logout";
     </p>
     <div>
       <center>
-        <h1 id="username-display">Welcome, Guest</h1>
+        <h1 id="username-display">You are able to Log in</h1>
         <br />
-    
-        <a href="/logout" class="inline-flex gap-2 items-center font-semibold text-slate-100 hover:text-blue-500">Logout</a>
+        <a href="/logout" class="inline-flex gap-2 items-center font-semibold text-slate-100 hover:text-blue-500" style="display: none;">Logout</a>
       
       </center>
     </div>
   </Container>
+  <script type="module" src="src/lib/username.js"></script>
 </nav>
 
 
