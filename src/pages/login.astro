@@ -1,12 +1,15 @@
 ---
 import Layout from "@layouts/LayoutLogin.astro";
-import LoginForm from "@components/LoginForm.astro";
 ---
 
 <Layout>
   <div class="login">
     <h1>Login</h1>
-    <LoginForm />
+    <form id="login-form">
+      <input type="email" id="email" placeholder="E-mail" required><br><br>
+      <input type="password" id="password" placeholder="password" required><br><br>
+      <button type="submit"> Sign In </button>  
+    </form>
     <div class="quote">
       <center>
         <span>Email: usd@example.com</span>
@@ -14,5 +17,14 @@ import LoginForm from "@components/LoginForm.astro";
        
       </center>
     </div>
+    <div style="text-align: center;">
+    
+      <form action="/signup" accept-charset="UTF-8" method="POST">
+        <br />
+        <button type="submit" >Sign Up</button>
+      </form>
+    </div>
   </div>
+  <script type="module" src="src/lib/signin.js"></script>
 </Layout>
+  
