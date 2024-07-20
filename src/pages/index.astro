@@ -3,7 +3,6 @@ import { databases } from '@lib/appwrite';
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/Container.astro';
 import siteMetadata from '@utils/siteMetadata.js';
-import ThemeToggle from '../components/ThemeToggle.astro';
 
 // Veritabanından sıralı şekilde gönderileri çek
 const MAX_DISPLAY = 10;
@@ -32,8 +31,11 @@ console.log('Displayed posts:', displayedPosts);
         </p>
       </div>
       <ul class="divide-y divide-gray-200 dark:divide-gray-700">
+        
         {displayedPosts.length === 0 && <li>No posts found.</li>}
+
         {displayedPosts.map(post => {
+
           const { slug, $createdAt, title } = post;
           return (
             <li key={slug} class="py-4">
