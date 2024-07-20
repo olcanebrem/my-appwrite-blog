@@ -12,7 +12,11 @@ body {
   margin: 0;
   padding: 0;
 }
-
+h1 {
+  color: white;
+  font-size: var(--h1-font-size);
+  font-weight: var(--h1-font-weight);
+}
 .login {
   width: 400px;
   margin: 100px auto;
@@ -110,7 +114,7 @@ button[disabled] {
 .login button:disabled,
 button[disabled] {
   background-color: #2e2e2e;
-  color: #666;
+  color: #e8e8e8;
 }
 
 .login h1 {
