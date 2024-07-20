@@ -1,0 +1,33 @@
+/* Varsayılan tema: Light */
+:root {
+    --background-color: #c6d6e5;
+    --text-color: #000;
+    --h1-color: #000;
+  }
+  
+  /* Dark tema */
+  [data-theme="dark"] {
+    --background-color: #19191b;
+    --text-color: #000000;
+    --h1-color: #c85252;
+    --a-color: #9f7d7d;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  h1 {
+    color: var(--h1-color);
+    font-size: 2em;
+  }
+  
+  a {
+    color: var(--a-color);
+    font-size: 1em;
+  }
+  p {
+    color: var(--a-color);
+    font-size: 1em;
+  }

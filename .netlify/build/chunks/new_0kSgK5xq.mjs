@@ -1,9 +1,10 @@
-/* empty css                         */
-import { c as createComponent, r as renderTemplate, f as renderComponent, b as createAstro, m as maybeRenderHead } from './astro/server_CSZ1XmLG.mjs';
+/* empty css                           */
+import { c as createComponent, r as renderTemplate, g as renderComponent, b as createAstro, m as maybeRenderHead } from './astro/server_BI2ss-O0.mjs';
 import 'kleur/colors';
 import { ID } from 'appwrite';
 import { marked } from 'marked';
-import { d as databases, $ as $$Container, a as $$Layout } from './Layout_Dl2C_gf4.mjs';
+import { d as databases } from './appwrite_DL6PifV7.mjs';
+import { $ as $$Container, a as $$Layout } from './Layout_BOH5WNIO.mjs';
 
 const $$Astro = createAstro();
 const $$New = createComponent(async ($$result, $$props, $$slots) => {
