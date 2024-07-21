@@ -29,9 +29,9 @@ import '@css/global.css';
       </div>
     <div>
       <center>
-        <h1 id="username-display" style="text-decoration: underline; margin-bottom: 5px;">You are</h1>
+        <h1 id="username-display" style="text-decoration: underline; margin-bottom: 5px;">You are Surfing</h1>
         
-        <h1 id="username-display" style="text-decoration: underline;">able to Sign in</h1>
+        <h1 id="username-display" style="text-decoration: underline;">Anonymous</h1>
     
         <a href="/logout" class="inline-flex gap-2 items-center font-semibold  hover:text-blue-500" style="display: none;">Logout</a>
       
@@ -39,6 +39,13 @@ import '@css/global.css';
     </div>
   </Container>
   <script type="module" src="src/lib/username.js"></script>
+  <div style="margin-bottom: 30px;">
+    <center>
+      <button id="theme-toggle">Toggle Theme</button>
+      <h1>Astro Dark/Light Theme Example</h1>
+    </center>
+  </div>
+    
 </nav>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -60,14 +67,6 @@ import '@css/global.css';
     }
   });
 </script>
-<div>
-<center>
-
-  <button id="theme-toggle">Toggle Theme</button>
-  <h1>Astro Dark/Light Theme Example</h1>
-</center>
-</div>
-<style></style>
 
 
 
