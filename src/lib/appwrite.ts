@@ -6,4 +6,5 @@ export const databases = new Databases(client);
 client
   .setEndpoint(import.meta.env.PUBLIC_APPWRITE_ENDPOINT)
   .setProject(import.meta.env.PUBLIC_APPWRITE_PROJECT_ID);
+  
 
