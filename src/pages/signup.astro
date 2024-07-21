@@ -4,64 +4,51 @@ import Layout from '@layouts/Layout.astro';
 
 <Layout>
   
-  <div class="container">
+  <div class="login">
     
-  </div>
+  
 
-    <form id="signup-form" accept-charset="UTF-8" class="space-y-6" style="max-width: 250px; max-height: 200px; margin: auto;" >
+    <form id="signup-form" style="max-width: 300px; max-height: 400px; margin:auto;">
       <div class="box">
-        <label for="username" class=" px-3 py-3 ">Username:</label>
+        <h2>
+          <label for="username" class="center; flex; px-3 py-3 ">Username:</label>
+        </h2>
+        
         <input 
         type="text" 
         name="username" 
         id="username" 
         required 
-        
         />
       </div>
       <div class="box">
-        <label for="email" class=" px-3 py-3 ">Email:</label>
+        <label for="email" class="center; flex; px-3 py-3 ">Email:</label>
         <input 
         type="email" 
         name="email" 
         id="email" 
         required 
-        
         />
       </div>
       <div class="box">
         <label for="password" 
-        class=" px-3 py-3 " style="padding: 22px;">Password:</label>
-        <input 
+        class="center; flex; px-3 py-3 " style="padding: 22px; max-width: 25px;">Password:</label>
+        <input
         type="password" 
         name="password" 
         id="password" 
         required 
-        
         />
       </div>
       <div class="box">
-        <button 
-        type="submit" 
-        class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-        Sign Up
-      </button>
-    </div>
-  </form>  
-  <script type="module" src="src/lib/signup.js"></script>
-<container/>
+          <button 
+          type="submit" 
+          class="py-2center; flex; px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Sign Up
+          </button>
+      </div>
+    </form>  
+  </div>
+<script type="module" src="src/lib/signup.js"></script>
 </Layout>
 
-<style>
-  .container {
-  display: flex;
-  gap: 5px; /* Opsiyonel: Kutular arasında boşluk bırakır */
-}
-
-.box {
-  flex: 0; /* Her kutunun eşit genişlikte olmasını sağlar */
-  padding: 10px; /* İç boşluk */
-  text-align: center; /* Metni ortalar */
-}
-
-</style>
