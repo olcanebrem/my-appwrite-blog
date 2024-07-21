@@ -7,17 +7,21 @@
 
 /* Dark tema */
 [data-theme="dark"] {
-  --background-color: #bdbdd0;
-  --text-color: #000000;
-  --h1-color: #c85252;
-  --a-color: #9f7d7d;
+  --background-color: #303039;
+  --text-color: #cfcce3;
+  --h1-color: #f6e3e3;
+  --h2-color: #f6e3e3;
+  --a-color: #938a8a;
+  --quote-hover: #938a8a;
 }
 
 [data-theme="light"] {
-  --background-color: #8fb68e;
-  --text-color: #a55555;
-  --h1-color: #bcd97e;
-  --a-color: #bec8b5;
+  --background-color: #cae2f0;
+  --text-color: #211b2b;
+  --h1-color: #7d49e5;
+  --h2-color: #7d49e5;
+  --a-color: #6943a0;
+  --quote-hover: #938a8a;
 }
 
 body {
@@ -26,9 +30,20 @@ body {
 }
 
 h1 {
-  color: white;
+  color: var(--h1-color);
   font-size: var(--h1-font-size);
   font-weight: var(--h1-font-weight);
+}
+
+a {
+  color: var(--a-color);
+  font-size: var(--a-font-size);
+  font-weight: var(--a-font-weight);
+}
+h2 {
+  color: var(--h2-color);
+  font-size: var(--h2-font-size);
+  font-weight: var(--h2-font-weight);
 }
 .login {
   width: 400px;
@@ -155,4 +170,9 @@ button[disabled] {
 
 .login label {
   font-size: 18px;
+}
+button{
+  color: var(--h1-color);
+  font-size: var(--h1-font-size);
+  font-weight: var(--h1-font-weight);
 }
