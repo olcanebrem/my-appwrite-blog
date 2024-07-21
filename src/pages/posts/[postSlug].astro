@@ -29,7 +29,9 @@ console.log('documents', documents)
 			<p class="text-slate-500 mb-14">
 				<time datetime={publishedDate.toISOString()}>Published { publishedDate.toLocaleDateString() }</time>
 			</p>
+			<Fragment set:html={post.excerpt} />
 			<Fragment set:html={post.content} />
+			<Fragment set:html={post.slug} />
 		</article>
 	</Container>
 </Layout>
