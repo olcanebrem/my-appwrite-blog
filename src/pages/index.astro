@@ -56,13 +56,16 @@ console.log('Displayed posts:', displayedPosts);
                       </div>
                     </div>
                     <div class="text-base font-medium leading-6">
-                      <a href={`/posts/${slug}`} class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400" aria-label={`Read more: "${title}"`}>
-                        Read more &rarr;
-                      </a>
-                      <div>
-                        <h2 style="text-decoration: underline;">username</h2>
+                        <a href={`/posts/${slug}`} class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400" aria-label={`Read more: "${title}"`}>
+                          Read more &rarr;
+                        </a>
+                        <div>
+                          <h2 id="username" style="text-decoration: underline;">Loading username...</h2>
+                        </div>
                       </div>
-                    </div>
+
+                      <script type="module" src="/src/lib/postid.js"></script>
+                    
                   </div>
                 </div>
               </article>
