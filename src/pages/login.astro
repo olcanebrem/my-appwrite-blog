@@ -1,27 +1,35 @@
 ---
-import Layout from "@layouts/LayoutLogin.astro";
+import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout>
   <div class="login">
     <h1>Login</h1>
-    <form id="login-form">
-      <input type="email" id="email" placeholder="E-mail" required><br><br>
-      <input type="password" id="password" placeholder="password" required><br><br>
-      <button type="submit"> Sign In </button>  
+    <form id="login-form" style="max-width: 300px; max-height: 400px; margin:auto;">
+      <h2>E-mail</h2>
+        <input type="email" id="email" placeholder="E-mail" required><br><br>
+      
+      <br />
+      <h2>Password</h2>
+        <input type="password" id="password" placeholder="password" required><br><br>
+      
+      <br />
+        <button type="submit"> Sign In </button>  
+      
     </form>
+    <br/>
     <div class="quote">
       <center>
-        <span>Email: usd@example.com</span>
-        <span>Password: 1234</span>
+        <span>Kaydın Yokmu?</span>
+        <span>Hemen Oluştur!</span>
        
       </center>
     </div>
     <div style="text-align: center;">
     
-      <form action="/signup" accept-charset="UTF-8" method="POST">
+      <form action="/signup"  accept-charset="UTF-8" method="POST">
         <br />
-        <button type="submit" >Sign Up</button>
+        <button type="submit" class="py-2center; flex; px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Sign Up</button>
       </form>
     </div>
   </div>

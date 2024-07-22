@@ -171,7 +171,14 @@ button[disabled] {
 .login label {
   font-size: 18px;
 }
+
 button{
+  color: var(--h1-color);
+  font-size: var(--h1-font-size);
+  font-weight: var(--h1-font-weight);
+}
+
+label{
   color: var(--h1-color);
   font-size: var(--h1-font-size);
   font-weight: var(--h1-font-weight);
