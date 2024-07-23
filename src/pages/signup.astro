@@ -9,41 +9,48 @@ import Layout from '@layouts/Layout.astro';
   
 
     <form id="signup-form" style="max-width: 300px; max-height: 400px; margin:auto;">
+      <h1>Sign Up</h1>
+      <br />
       <div class="box">
-        <h2>
-          <label for="username" class="center; flex; px-3 py-3 ">Username:</label>
-        </h2>
+        
         
         <input 
+        placeholder="Username"
         type="text" 
         name="username" 
         id="username" 
         required 
         />
       </div>
+      <br />
       <div class="box">
-        <label for="email" class="center; flex; px-3 py-3 ">Email:</label>
+       
         <input 
+        placeholder="E-mail"
         type="email" 
         name="email" 
         id="email" 
         required 
         />
       </div>
+      <br />
       <div class="box">
-        <label for="password" 
-        class="center; flex; px-3 py-3 " style="padding: 22px; max-width: 25px;">Password:</label>
+       
         <input
+        placeholder="Password"
         type="password" 
         name="password" 
         id="password" 
         required 
         />
       </div>
+      <br />
       <div class="box">
           <button 
           type="submit" 
-          class="py-2center; flex; px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          class="py-2center; flex; px-4 border border-transparent shadow-sm text-sm font-medium rounded-md 
+          text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 
+          focus:ring-indigo-500">
           Sign Up
           </button>
       </div>

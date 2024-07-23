@@ -5,12 +5,13 @@ import Layout from '@layouts/Layout.astro';
 <Layout>
   <div class="login">
     <h1>Login</h1>
+    <br />
     <form id="login-form" style="max-width: 300px; max-height: 400px; margin:auto;">
-      <h2>E-mail</h2>
-        <input type="email" id="email" placeholder="E-mail" required><br><br>
+      
+        <input type="email" id="email" autocomplete="email" placeholder="E-mail" required><br><br>
       
       <br />
-      <h2>Password</h2>
+      
         <input type="password" id="password" placeholder="password" required><br><br>
       
       <br />

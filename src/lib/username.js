@@ -3,27 +3,42 @@ import { client } from './appwrite';
 
 const account = new Account(client);
 
-async function getSessionUsername() {
-  try {
-    // Mevcut oturumu alın
+export async function getSessionUsername() {
+  const storedUsername = sessionStorage.getItem('username');
+  const usernameDisplay = document.getElementById('usernameDisplay');
+  const logoutButton = document.getElementById('logoutButton');
+
+  if (storedUsername) {
+    // Eğer kullanıcı adı zaten saklandıysa, bunu kullanın
+    console.log('Kullanıcı adı alındı');
+    if (usernameDisplay) {
+      usernameDisplay.innerHTML = `Welcome, <strong>${storedUsername}</strong>`;
+    }
     
-    // Kullanıcı bilgilerini alın
-    const user = await account.get();
+      logoutButton.style.display = 'inline-flex'; // Butonu göster
     
-    // Kullanıcı adını alın
-    const username = user.name || 'Guest'; 
-    // HTML öğesini güncelleyin
-    document.getElementById('username-display').innerHTML = `Welcome, <strong>${username}</strong>`;
-    const logoutButton = document.querySelector('a[href="/logout"]');
-    if (logoutButton) {
+    return storedUsername;
+  } else {
+    // Kullanıcı adını Appwrite'tan çekin
+    try {
+      const user = await account.get();
+      const username = user.name;
+      // Kullanıcı adını oturum saklamada saklayın
+      sessionStorage.setItem('username', username);
+      
+      if (usernameDisplay) {
+        usernameDisplay.textContent = username;
+      }
+      if (logoutButton) {
         logoutButton.style.display = 'inline-flex';
       }
-
-  } catch (error) {
-    console.log('Error fetching user info:', error);
-    if (logoutButton) {
+      
+    } catch (error) {
+      console.log('Error fetching user info:', error);
+      if (logoutButton) {
         logoutButton.style.display = 'none';
       }
+    }
   }
 }
 

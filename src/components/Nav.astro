@@ -2,7 +2,6 @@
 import Container from '@components/Container.astro';
 import Button from "@components/LogoutButton.astro";
 import '@css/global.css';
-import { getSessionUsername } from '../lib/postid';
 ---
 <nav>
 
@@ -29,14 +28,13 @@ import { getSessionUsername } from '../lib/postid';
       </div>
     <div>
       <center>
-        <h1 id="username-display">You are Surfing<br>as <strong>Guest</strong></h1>
-        
-        <a href="/logout" class="inline-flex gap-2 items-center font-semibold  hover:text-blue-500" style="display: none;">Logout</a>
+        <h1 id="usernameDisplay">You are Surfing<br>as <strong>Guest</strong></h1>
+    
+        <a href="/logout" id="logoutButton" class="inline-flex gap-2 items-center font-semibold  hover:text-blue-500" style="display: none;">Logout</a>
       
       </center>
     </div>
   </Container>
-  <script type="module" src="/src/lib/username.js"></script>
   <div style="margin-bottom: 30px;">
     <center>
       <button id="theme-toggle">Toggle Switch</button>

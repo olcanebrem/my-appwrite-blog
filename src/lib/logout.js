@@ -9,12 +9,10 @@ async function deleteSession() {
     const session = await account.getSession('current');
     const jwtToken = session.jwt;
     console.log('JWT Token:', jwtToken);
-
-    console.log("Session var");
     console.log(session);
 
     await account.deleteSession('current');
-    // Redirect on success
+    sessionStorage.removeItem('username');
     console.log('Current session deleted');
     window.location.href = "../index.html";
 
