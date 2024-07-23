@@ -1,15 +1,13 @@
 ---
 import Container from '@components/Container.astro';
-import Button from "@components/LogoutButton.astro";
 import '@css/global.css';
-
 ---
 <nav>
 
   <Container class="flex justify-between items-center pt-6 pb-12 md:py-16">
     <p>
       <a href="/" class="text-4xl font-bold   hover:text-slate-900 dark:hover:text-gray-100 drop-shadow-[0_2px_0px_rgba(255,255,255,1)] dark:drop-shadow-[0_2px_0px_rgba(0,0,0,1)]">
-        My Blog
+        open<strong>USD</strong><br>.cloud
       </a>
       
     </p>
@@ -29,20 +27,18 @@ import '@css/global.css';
       </div>
     <div>
       <center>
-        <h1 id="username-display" style="text-decoration: underline; margin-bottom: 5px;">You are Surfing</h1>
-        
-        <h1 id="username-display" style="text-decoration: underline;">Anonymous</h1>
+        <h1 id="usernameDisplay"></h1>
     
-        <a href="/logout" class="inline-flex gap-2 items-center font-semibold  hover:text-blue-500" style="display: none;">Logout</a>
+        <a href="/logout" id="logoutButton" class="inline-flex gap-2 items-center font-semibold  hover:text-blue-500" style="display: none;">Logout</a>
       
       </center>
     </div>
   </Container>
-  <script src="src/lib/username.js"></script>
+   <script src="src/lib/username.js"></script>
   <div style="margin-bottom: 30px;">
     <center>
-      <button id="theme-toggle">Toggle Theme</button>
-      <h1>Astro Dark/Light Theme Example</h1>
+      <button id="theme-toggle">Toggle Switch</button>
+      <h1>Dark/Light Mode</h1>
     </center>
   </div>
     

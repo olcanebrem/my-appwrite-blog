@@ -1,0 +1,222 @@
+[33mcommit 1568b10d3b3a554c1e1ed32382b0c93d352449cf[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Wed Jul 24 00:20:22 2024 +0300
+
+    master not working on netlify
+
+[33mcommit a5cfcaa5cbf0f9343a538d247043e416b425a2c6[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Tue Jul 23 23:46:26 2024 +0300
+
+    login menu and username checking from local
+
+[33mcommit 314e75559d708ad3aa16a61d0e01b1e6ffcea1ef[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Tue Jul 23 19:08:49 2024 +0300
+
+    blog name & nav username
+
+[33mcommit 94d646cd608c470c30ecbeebf6d7049f85f0ce62[m[33m ([m[1;31mnew-remote/master[m[33m)[m
+Merge: dcf8287 f29396e
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Tue Jul 23 01:45:03 2024 +0300
+
+    Merge pull request #2 from olcanebrem/netlify
+    
+    Netlify to master
+
+[33mcommit dcf82875b1a5e56c7e9073cfeacae4d1fdf49ca5[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Mon Jul 22 21:45:52 2024 +0300
+
+    post_username
+
+[33mcommit f29396e7560ee4ee62a8c44293a7424188a7110c[m[33m ([m[1;31morigin/netlify[m[33m, [m[1;31mnew-remote/netlify[m[33m, [m[1;32mnetlify[m[33m)[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Mon Jul 22 01:36:21 2024 +0300
+
+    test remote2
+
+[33mcommit 95ae8015a50070205d2da7d13fdae78a2f361df7[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Sun Jul 21 21:26:30 2024 +0300
+
+    test remote
+
+[33mcommit c07fc03e529a86f8b859912c31debb894c6c8b3e[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Sun Jul 21 20:12:17 2024 +0300
+
+    minor fix
+
+[33mcommit 9e478c09f29ef20285d5e41fc8ae82187ee51e6e[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Sun Jul 21 19:59:16 2024 +0300
+
+    theme fix
+
+[33mcommit 5626844c536cc312633ec8751a8d361c0531da15[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Sun Jul 21 19:24:13 2024 +0300
+
+    renk problemi çözüldü
+
+[33mcommit 23d8030d856bbc6e7b7a641db7bb7b2622cbfc7e[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Sun Jul 21 18:56:25 2024 +0300
+
+    bok merge
+
+[33mcommit 383094f8179ab339576f698f3d3aab0d509bbc1d[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Sun Jul 21 18:51:03 2024 +0300
+
+    bok merge
+
+[33mcommit 470b2d580c0cc38692afe5cf447cd7160503d073[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Sun Jul 21 18:48:10 2024 +0300
+
+    bok merge
+
+[33mcommit ceeb4a709893d9c06a17af67c714f0170504efc7[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Sun Jul 21 18:46:44 2024 +0300
+
+    bok merge
+
+[33mcommit 1d458a6f315740239e254ef217e7e485a760f98a[m
+Merge: 3f14bd1 c40e751
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Sun Jul 21 18:19:59 2024 +0300
+
+    Merge branch 'master' of github.com:olcanebrem/my-appwrite-blog
+
+[33mcommit 3f14bd16df099ea1b2432eec59973511e7b69db7[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Sun Jul 21 18:19:16 2024 +0300
+
+    bok merge
+
+[33mcommit fd9cdebc12550a8c4f0ed7a56970cd6af3a25026[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Sun Jul 21 18:17:02 2024 +0300
+
+    bok merge
+
+[33mcommit c40e751c5e6eda475cdba1cafdcc04843df0184a[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Sun Jul 21 02:57:42 2024 +0300
+
+    before darkmode
+
+[33mcommit 39a6de20c84df30aeda64617865af9381c451c81[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Sun Jul 21 00:37:18 2024 +0300
+
+    gitignore
+
+[33mcommit 573ca00912d109bdbd0a29bd2a35d0fc0551eb67[m
+Merge: 4573a9a 7b10c7a
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Sat Jul 20 23:18:23 2024 +0300
+
+    Merge pull request #1 from olcanebrem/tailwind
+    
+    anamın ruhu üzerine bu merge i onaylıyorum!
+
+[33mcommit 7b10c7a64482bf93e68b949b25f4d2a1f916ea21[m[33m ([m[1;31morigin/tailwind[m[33m)[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Sat Jul 20 22:52:56 2024 +0300
+
+    darkmode
+
+[33mcommit 0b2090ce4f5957ec1d18ac10f37be4f3d4f324ac[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Sat Jul 20 01:49:42 2024 +0300
+
+    vsco commit
+
+[33mcommit 2c66318c43cb3bab7bda862bc2d822bf3e2b4e8b[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Sat Jul 20 01:21:17 2024 +0300
+
+    sessions done
+
+[33mcommit d1f3e1065f07fd3bdb85dfaf4363b5c1973d5c0f[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Thu Jul 18 21:45:07 2024 +0300
+
+    py-12
+
+[33mcommit 4573a9acddfec113a333365a95b2ae9c44d4bf22[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Thu Jul 18 03:36:18 2024 +0300
+
+    netflix4
+
+[33mcommit c6b5b9198c5cd96afd5a1b7904bef7613f29469c[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Thu Jul 18 03:28:37 2024 +0300
+
+    netflix3
+
+[33mcommit a9e776f31f85c1bc1155321bab5896e47d31c847[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Thu Jul 18 03:26:09 2024 +0300
+
+    netflix2
+
+[33mcommit fe703d0b3030e943e098dc34485bc430ce722c38[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Thu Jul 18 03:19:21 2024 +0300
+
+    netflix
+
+[33mcommit 64af1164309b05a70c2810830d7a4feac0b0d0f4[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Wed Jul 17 01:53:29 2024 +0300
+
+    vercel
+
+[33mcommit 031e6031320fee373385e040b91b29df2f8b4f33[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Wed Jul 17 01:51:19 2024 +0300
+
+    vercel
+
+[33mcommit de45e93d9bb1d5c4f57f05443da3fa929ede8936[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Wed Jul 17 00:55:58 2024 +0300
+
+    netlify
+
+[33mcommit b4e3c1e523b2c2827f8084e6c22dd1f45ff09f63[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Wed Jul 17 00:49:16 2024 +0300
+
+    *
+
+[33mcommit e7e8c1cdf81618c1f2f7ce2c9327228580a572f9[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Wed Jul 17 00:34:26 2024 +0300
+
+    *
+
+[33mcommit 4f767ae5891abc6a0674bf7d16d7aaabd059a39f[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Wed Jul 17 00:00:07 2024 +0300
+
+    *
+
+[33mcommit ac0ead56640317eb57e5158a8a1271c38f8c7e3f[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Tue Jul 16 23:54:26 2024 +0300
+
+    *
+
+[33mcommit 8200005e84eca96e8adcb8529d4a57dc135f9ba8[m
+Author: Olcan EBREM <olcanebrem@gmail.com>
+Date:   Tue Jul 16 23:43:42 2024 +0300
+
+    *
