@@ -26,6 +26,8 @@ console.log('documents', documents)
 	<Container>
 		<article class="prose mx-auto">
 			<h1 class="text-4xl font-extrabold mb-6">{ post.title }</h1>
+			<h2 id="username-display">username</h2>
+			<script type="module" src="../src/lib/username.js"></script>
 			<p class="text-slate-500 mb-14">
 				<time datetime={publishedDate.toISOString()}>Published { publishedDate.toLocaleDateString() }</time>
 			</p>
