@@ -27,7 +27,7 @@ export async function getSessionUsername() {
       sessionStorage.setItem('username', username);
       
       if (usernameDisplay) {
-        usernameDisplay.textContent = username;
+        usernameDisplay.innerHTML = `Welcome, <strong>${storedUsername}</strong>`;
       }
       if (logoutButton) {
         logoutButton.style.display = 'inline-flex';
@@ -37,6 +37,10 @@ export async function getSessionUsername() {
       console.log('Error fetching user info:', error);
       if (logoutButton) {
         logoutButton.style.display = 'none';
+      }
+      if (usernameDisplay) {
+        usernameDisplay.innerHTML = `You are Surfing as <strong>Guest</strong>`;
+        
       }
     }
   }
