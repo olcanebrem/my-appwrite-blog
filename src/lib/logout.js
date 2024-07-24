@@ -14,13 +14,13 @@ async function deleteSession() {
     await account.deleteSession('current');
     sessionStorage.removeItem('username');
     console.log('Current session deleted');
-    window.location.href = "../index";
+    window.location.href = "../";
 
     
   } catch (error) {
     console.log("Session not registered");
     // Redirect on success
-    window.location.href = "../index";
+    window.location.href = "../";
 
     if (error instanceof AppwriteException) {
       console.log('Appwrite exception:', error.message);

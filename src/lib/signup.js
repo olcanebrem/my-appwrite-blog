@@ -25,7 +25,7 @@ format.addEventListener("submit", async (e) => {
     );
     
     // Redirect on success
-    window.location.href = "../index";
+    window.location.href = "../";
     alert("Account Created!");
   } catch (error) {
     console.log("Error occurred while creating account");
