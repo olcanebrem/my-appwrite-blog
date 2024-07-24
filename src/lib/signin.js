@@ -27,7 +27,7 @@ if(session) {
 
     console.log('JWT Token:', jwtToken);
     // JWT token'ı saklayın ve kullanın
-    window.location.href = "../index.html";
+    window.location.href = "../index";
 } else {
 
     
@@ -48,7 +48,7 @@ if(session) {
             
             console.log(result); // Output the response
             console.log('Session created successfully');
-            window.location.href = "../index.html";
+            window.location.href = "../index";
             
         } catch (error) {
             console.error('Error creating session:', error);
