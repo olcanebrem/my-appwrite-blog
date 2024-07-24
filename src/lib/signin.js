@@ -10,7 +10,7 @@ try{
     const jwtToken = session.jwt;
     // JWT token'ı saklayın ve kullanın
     console.log("Session var");
-    getSessionUsername();
+    await getSessionUsername();
 }   catch(e) {
     console.log("Session not registred");
 
