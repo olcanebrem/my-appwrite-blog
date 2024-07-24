@@ -1,17 +1,5 @@
-/* Varsayılan tema: Light */
-:root {
-  --background-color: #c6d6e5;
-  --text-color: #7a2525;
-  --h1-color: #cc6161;
-}
-
-/* Dark tema */
 
 
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
 
 h1 {
   color: white;

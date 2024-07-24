@@ -3,11 +3,13 @@ import Container from '@components/Container.astro';
 import '@css/global.css';
 ---
 <nav>
-
+  
+  <script src="src/lib/theme.js"></script>
+  <script src="src/lib/username.js"></script>
   <Container class="flex justify-between items-center pt-6 pb-12 md:py-16">
     <p>
       <a href="/" class="text-4xl font-bold   hover:text-slate-900 dark:hover:text-gray-100 drop-shadow-[0_2px_0px_rgba(255,255,255,1)] dark:drop-shadow-[0_2px_0px_rgba(0,0,0,1)]">
-        open<strong>USD</strong><br>.cloud
+        Open<strong>USD</strong><br>.cloud
       </a>
       
     </p>
@@ -27,14 +29,13 @@ import '@css/global.css';
       </div>
     <div>
       <center>
-        <h1 id="usernameDisplay"></h1>
+        <h1 id="usernameDisplay">You are Surfing as <strong>Guest</strong></h1>
     
         <a href="/logout" id="logoutButton" class="inline-flex gap-2 items-center font-semibold  hover:text-blue-500" style="display: none;">Logout</a>
       
       </center>
     </div>
   </Container>
-   <script src="src/lib/username.js"></script>
   <div style="margin-bottom: 30px;">
     <center>
       <button id="theme-toggle">Toggle Switch</button>
@@ -43,26 +44,7 @@ import '@css/global.css';
   </div>
     
 </nav>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    }
 
-    const toggleTheme = () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    };
-
-    const themeToggleButton = document.getElementById('theme-toggle');
-    if (themeToggleButton) {
-      themeToggleButton.addEventListener('click', toggleTheme);
-    }
-  });
-</script>
 
 
 

@@ -1,6 +1,6 @@
 /* Varsayılan tema: Light */
 :root {
-  --background-color: #c6d6e5;
+  --background-color: #303039;
   --text-color: #dd7e7e;
   --h1-color: #ba6060;
 }
@@ -183,3 +183,4 @@ label{
   font-size: var(--h1-font-size);
   font-weight: var(--h1-font-weight);
 }
+
