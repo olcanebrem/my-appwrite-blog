@@ -4,14 +4,17 @@ import { marked } from 'marked';
 import { databases } from '@lib/appwrite';
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/Container.astro';
+import { getPostID } from '@lib/postid';
 
 if ( Astro.request.method === "POST" ) {
+
   const formData = await Astro.request.formData();
+
   const data = {
     title: String(formData.get('title')),
-    slug: String(formData.get('slug')),
+    slug: encodeURIComponent(String(formData.get('slug'))),
     content: await marked(String(formData.get('content'))),
-    excerpt: String(formData.get('excerpt')),
+    username: await getPostID(),
   }
   const results = await databases.createDocument(
     import.meta.env.PUBLIC_APPWRITE_DATABASE_ID,
@@ -19,6 +22,7 @@ if ( Astro.request.method === "POST" ) {
     ID.unique(),
     data
   );
+  
   return Astro.redirect(`/posts/${results.slug}`);
 }
 ---

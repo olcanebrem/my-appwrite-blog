@@ -33,7 +33,7 @@ console.log('Displayed posts:', displayedPosts);
       <ul class="divide-y divide-gray-200 dark:divide-gray-700">
         {displayedPosts.length === 0 && <li>No posts found.</li>}
         {displayedPosts.map((post) => {
-          const { slug, $createdAt, title } = post;
+          const { username, slug, $createdAt, title } = post;
           return (
             <li class="py-4">
               <article>
@@ -60,7 +60,7 @@ console.log('Displayed posts:', displayedPosts);
                           Read more &rarr;
                         </a>
                         <div>
-                          <h2 id="usernameDisplay" style="text-decoration: underline;">Loading username...</h2>
+                          <h2 id="usernameDisplay" style="text-decoration: underline;">{username}</h2>
                         </div>
                       </div>
 
