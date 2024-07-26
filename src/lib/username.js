@@ -10,7 +10,7 @@ export async function getSessionUsername() {
 
   if (storedUsername) {
     // Eğer kullanıcı adı zaten saklandıysa, bunu kullanın
-    console.log('Kullanıcı adı alındı');
+    console.log('Kullanıcı adı alındı:', storedUsername);
     if (usernameDisplay) {
       usernameDisplay.innerHTML = `Welcome, <strong>${storedUsername}</strong>`;
     }
@@ -25,6 +25,7 @@ export async function getSessionUsername() {
       const username = user.name;
       // Kullanıcı adını oturum saklamada saklayın
       sessionStorage.setItem('username', username);
+      console.log('Username:',username);
       
       if (usernameDisplay) {
         usernameDisplay.innerHTML = `Welcome, <strong>${storedUsername}</strong>`;

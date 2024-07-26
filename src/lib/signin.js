@@ -1,6 +1,5 @@
 import { AppwriteException ,Account} from "appwrite";
 import { client } from "./appwrite";
-import { getSessionUsername } from "./username";
 
 var session;
 const account = new Account(client);
@@ -10,7 +9,6 @@ try{
     const jwtToken = session.jwt;
     // JWT token'ı saklayın ve kullanın
     console.log("Session var");
-    await getSessionUsername();
 }   catch(e) {
     console.log("Session not registred");
 

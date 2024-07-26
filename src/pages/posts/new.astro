@@ -1,36 +1,12 @@
 ---
-import { ID } from 'appwrite';
-import { marked } from 'marked';
-import { databases } from '@lib/appwrite';
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/Container.astro';
-import { getPostID } from '@lib/postid';
-
-if ( Astro.request.method === "POST" ) {
-
-  const formData = await Astro.request.formData();
-
-  const data = {
-    title: String(formData.get('title')),
-    slug: encodeURIComponent(String(formData.get('slug'))),
-    content: await marked(String(formData.get('content'))),
-    username: await getPostID(),
-  }
-  const results = await databases.createDocument(
-    import.meta.env.PUBLIC_APPWRITE_DATABASE_ID,
-    import.meta.env.PUBLIC_APPWRITE_COLLECTION_ID,
-    ID.unique(),
-    data
-  );
-  
-  return Astro.redirect(`/posts/${results.slug}`);
-}
 ---
 <Layout title="New Post - My Blog">
 	<Container>
     <h1 class="text-2xl font-bold mb-6">New Post</h1>
-    
-    <form method="POST">
+    <script  src="../src/lib/main.js"></script>
+    <form id="post-form"  method="POST">
       <div class="mb-6">
         <label class="block text-sm font-semibold mb-3" for="title">Title</label>
         <input
