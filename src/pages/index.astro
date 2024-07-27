@@ -21,6 +21,7 @@ console.log('Displaying posts');
 ---
 <Layout title="My Blog">
   <Container>
+    <link rel="stylesheet" href="src/styles/global.css" />
     <div class="divide-y divide-gray-200 dark:divide-gray-700">
       <div class="space-y-2 pb-8 pt-6 md:space-y-5">
         <h1 class="text-3xl font-extrabold leading-9 tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
@@ -81,5 +82,32 @@ console.log('Displaying posts');
         </a>
       </div>
     )}
+    <div id="toast" class="toast">
+      <div class="toast-content">
+        <div class="message">
+          <div class="text-sm font-semibold">Siteye hoş geldin</div>
+          <div class="text-sm opacity-90">Sen üye olana kadar seni ziyaretçi pozisyonunda tutuyoruz.</div>
+        </div>
+        <button type="button" class="btn-done">Tamam</button>
+        <button type="button" class="btn-close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-x h-4 w-4"
+          >
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script type="module" src="src/lib/toast.js"></script>
   </Container>
 </Layout>
