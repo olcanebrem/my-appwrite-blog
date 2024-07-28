@@ -12,12 +12,11 @@ import '@styles/global.css';
       /* Add your styles here */
     </style>
     <script>
-     const themeToggle = document.getElementById('theme-toggle');
-if (themeToggle) {
-  themeToggle.addEventListener('click', function() {
-    // Event listener logic here
-  });
-}
+      // Immediately apply the saved theme
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.body.classList.add(theme + '-mode');
+      })();
     </script>
   </head>
   <body class="light-mode">
@@ -63,7 +62,9 @@ if (themeToggle) {
     </nav>
 
     <script>
-      document.getElementById('theme-toggle').addEventListener('click', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
         const body = document.body;
         if (body.classList.contains('light-mode')) {
           body.classList.remove('light-mode');
@@ -74,7 +75,7 @@ if (themeToggle) {
           body.classList.add('light-mode');
           localStorage.setItem('theme', 'light');
         }
-      });
+      })};
     </script>
     <script src="src/lib/theme.js"></script>
     <script src="src/lib/username.js"></script>
