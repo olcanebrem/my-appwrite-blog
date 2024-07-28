@@ -7,9 +7,123 @@ import '@styles/global.css';
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Astro Site</title>
+    <title>OpenUSD</title>
+    <header class="flex items-center h-16 md:h-18 z-50 sticky top-0 bg-[rgba(0,0,0,0.5)] border-b">
+      <div class="relative container flex items-center px-4 md:px-8">
+        <div class="flex items-center">
+          <div style="padding-right: 15px;">
+            <a href="/" class="hidden items-center space-x-2 md:flex">
+              <svg width="1em" height="1em" viewBox="0 0 24 24" class="size-8" data-icon="stars-outline">
+                <symbol id="ai:local:stars-outline">
+                  <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0-2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm0 8.5a1 1 0 0 1-.866-.5l-1.95-3.377-3.782.89a1 1 0 0 1-1.176-1.42l1.95-3.378-3.782-.89a1 1 0 0 1 0-1.938l3.782-.889-1.95-3.379a1 1 0 0 1 1.176-1.419l3.782.89 1.95-3.378a1 1 0 0 1 1.732 0l1.95 3.378 3.782-.89a1 1 0 0 1 1.176 1.419l-1.95 3.379 3.782.889a1 1 0 0 1 0 1.938l-3.782.89 1.95 3.378a1 1 0 0 1-1.176 1.42l-3.782-.89-1.95 3.377A1 1 0 0 1 12 24Zm0-6.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+                </symbol>
+              </svg>
+              <span class="hidden font-bold sm:inline-block">Logo</span>
+            </a>
+          </div>
+          <nav class="hidden md:flex gap-6 lg:gap-10">
+            <a href="/about" class="hover:text-foreground/80 transition-colors">About</a>
+            <a href="/contact" class="hover:text-foreground/80 transition-colors">Contact</a>
+            <a href="/services" class="hover:text-foreground/80 transition-colors">Services</a>
+            <a href="/blog" class="hover:text-foreground/80 transition-colors">Blog</a>
+          </nav>
+        </div>
+        <div class="flex items-center gap-6 md:gap-8 ml-auto">
+          <div class="hidden md:flex gap-4">
+            <a href="/signup" class="hover:text-foreground/80 transition-colors">Sign Up</a>
+            <a href="/login" class="hover:text-foreground/80 transition-colors">Log In</a>
+          </div>
+          <button id="theme-toggle" class="text-foreground" aria-label="Toggle Theme">
+            <svg id="theme-toggle-dark-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 3V1M12 23v-2M5.636 5.636l-1.414-1.414M20.364 20.364l-1.414-1.414M1 12H3M21 12h2M5.636 18.364l-1.414 1.414M20.364 3.636l-1.414 1.414M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 9a3 3 0 100 6 3 3 0 000-6zm0 12a9 9 0 100-18 9 9 0 000 18z" fill="currentColor"/>
+            </svg>
+          </button>
+          <button class="md:hidden text-foreground" aria-label="Toggle Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    
+    
+    <script>
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const darkIcon = document.getElementById('theme-toggle-dark-icon');
+      const lightIcon = document.getElementById('theme-toggle-light-icon');
+    
+      themeToggleBtn.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        darkIcon.classList.toggle('hidden');
+        lightIcon.classList.toggle('hidden');
+      });
+    </script>
+    
     <style>
-      /* Add your styles here */
+      :root {
+        --accent-gradient: linear-gradient(50deg, #ff6b6b, #f06595, #cc5de8, #845ef7, #5c7cfa, #339af0, #22b8cf);
+        --accent-light: 255, 255, 255;
+        --accent-dark: 0, 0, 0;
+      }
+      main {
+        margin: auto;
+        padding: 1rem;
+        width: 800px;
+        max-width: calc(100% - 2rem);
+        color: white;
+        font-size: 20px;
+        line-height: 1.6;
+      }
+      .astro-a {
+        position: absolute;
+        top: -32px;
+        left: 50%;
+        transform: translatex(-50%);
+        width: 220px;
+        height: auto;
+        z-index: -1;
+      }
+      h1 {
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 1em;
+      }
+      .text-gradient {
+        background-image: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400%;
+        background-position: 0%;
+      }
+      .instructions {
+        margin-bottom: 2rem;
+        border: 1px solid rgba(var(--accent-light), 25%);
+        background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+        padding: 1.5rem;
+        border-radius: 8px;
+      }
+      .instructions code {
+        font-size: 0.8em;
+        font-weight: bold;
+        background: rgba(var(--accent-light), 12%);
+        color: rgb(var(--accent-light));
+        border-radius: 4px;
+        padding: 0.3em 0.4em;
+      }
+      .instructions strong {
+        color: rgb(var(--accent-light));
+      }
+      .link-card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+        gap: 2rem;
+        padding: 0;
+      }
     </style>
     <script>
       // Immediately apply the saved theme
@@ -23,8 +137,8 @@ import '@styles/global.css';
     <nav>
       <Container class="flex justify-between items-center pt-6 pb-12 md:py-16">
         <p>
-          <a href="/" class="text-4xl font-bold hover:text-slate-900 dark:hover:text-gray-100 drop-shadow-[0_2px_0px_rgba(255,255,255,1)] dark:drop-shadow-[0_2px_0px_rgba(0,0,0,1)]">
-            Open<strong>USD</strong><br>.cloud
+          <a href="/" class="instructions strong text-4xl font-bold hover:text-slate-900 dark:hover:text-gray-100 drop-shadow-[0_2px_0px_rgba(255,255,255,1)] dark:drop-shadow-[0_2px_0px_rgba(0,0,0,1)]">
+            Open<strong>USD</strong>.cloud
           </a>
         </p>
         <div style="display: flex; justify-content: space-between;">

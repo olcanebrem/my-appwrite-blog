@@ -25,17 +25,15 @@ body {
   transition: background-color 0.2s, color 0.2s;
 }
 
-/* Başlık stilleri */
 h1 {
   color: var(--h1-color);
   font-size: 14px;
-  text-align: center;
   font-weight: bold;
 }
 
 h2 {
   color: var(--h2-color);
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
 }
 
