@@ -1,8 +1,11 @@
 /* Varsayılan tema: Light */
 :root {
-  --background-color: #303039;
-  --text-color: #000;
-  --h1-color: #000;
+  --background-color: #e4e4e4;
+  --text-color: #211b2b;
+  --h1-color: #6c2cee;
+  --h2-color: #7952c7;
+  --a-color: #a29aac;
+  --quote-hover: #938a8a;
 }
 
 /* Dark tema */
@@ -15,46 +18,125 @@
   --quote-hover: #938a8a;
 }
 
-[data-theme="light"] {
-  --background-color: #cae2f0;
-  --text-color: #211b2b;
-  --h1-color: #7d49e5;
-  --h2-color: #7d49e5;
-  --a-color: #6943a0;
-  --quote-hover: #938a8a;
-}
-
+/* Temel gövde stilleri */
 body {
   background-color: var(--background-color);
-  color: #333;
+  color: var(--text-color);
+  transition: background-color 0.2s, color 0.2s;
 }
 
+/* Başlık stilleri */
 h1 {
   color: var(--h1-color);
-  font-size: var(--h1-font-size);
-  font-weight: var(--h1-font-weight);
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
 }
 
-a {
-  color: var(--a-color);
-  font-size: var(--a-font-size);
-  font-weight: var(--a-font-weight);
-}
 h2 {
   color: var(--h2-color);
-  font-size: var(--h2-font-size);
-  font-weight: var(--h2-font-weight);
-}
-.login {
-  width: 400px;
-  margin: 100px auto;
-  background-color: --background-color;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px 0px rgba(99, 98, 98, 0.75);
-  color: white;
+  font-size: 18px;
+  font-weight: bold;
 }
 
+/* Link stilleri */
+a {
+  color: var(--a-color);
+  text-decoration: underline;
+  transition: color 0.2s;
+  font-size: 18px;
+}
+
+a:hover {
+  color: var(--quote-hover);
+}
+
+/* Genel kutu stilleri */
+.command-box, .index, .login {
+  max-width: 500px; /* Genişliği artırdık */
+  width: 100%; /* Genişliği yüzde olarak belirledik */
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  cursor: copy;
+  transition: background-color 0.2s, color 0.2s;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 100px auto;
+  box-shadow: 0 4px 6px rgba(99, 98, 98, 0.75);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.command-box:hover, .index:hover, .login:hover {
+  background-color: #f3f4f6;
+  color: #ffcc00;
+}
+
+/* Giriş buton stilleri */
+.login button, .index button {
+  display: flex;
+  outline: 0;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  background: #373737;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  color: #fff;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+  margin: auto;
+  margin-top: 2.5%;
+  margin-bottom: 5%;
+}
+
+.login button:hover, .index button:hover {
+  border-color: #373737;
+  background-color: #494949;
+  color: #373737;
+}
+
+.login button:disabled, .index button:disabled {
+  background-color: var(--background-color);
+  color: #666;
+}
+
+/* Giriş input stilleri */
+.login input {
+  background-color: #2f2f30;
+  outline: 0;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  padding: 10px 22px;
+  border: 2px solid #2f2f30;
+  width: 80%; /* Genişliği yüzde olarak belirledik */
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  margin-top: 2.5%;
+  margin-bottom: 5%;
+  display: block; /* Blok seviyesi eleman olarak ayarlandı */
+  margin-inline: auto; /* Ortalamak için */
+}
+
+
+.login input:focus {
+  border: 2px solid #3a3d41;
+}
+
+.login h1 {
+  text-align: center;
+  margin-bottom: 2.5%;
+}
+
+.login label {
+  font-size: 18px;
+  color: var(--h1-color);
+  font-weight: bold;
+}
+
+/* Alıntı stilleri */
 .quote {
   font-style: italic;
   font-size: 20px;
@@ -77,113 +159,7 @@ h2 {
   color: rgb(51, 170, 250);
 }
 
-.index {
-  width: 400px;
-  margin: 100px auto;
-  background-color: var(--background-color);
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px 0px rgba(99, 98, 98, 0.75);
-  color: white;
-}
-
-.index button {
-  display: flex;
-  outline: 0;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 13px;
-  background: #373737;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-  color: #fff;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: all 0.4s ease;
-  margin: auto;
-  margin-top: 2.5%;
-  margin-bottom: 5%;
-}
-
-.index button:hover {
-  border-color: #373737;
-  background-color: #494949;
-  color: #373737;
-}
-
-.index button:disabled,
-button[disabled] {
-  background-color: var(--background-color);
-  color: #666;
-}
-
-.login button {
-  display: flex;
-  outline: 0;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 13px;
-  background: --background-color;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-  color: #fff;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: all 0.4s ease;
-  margin: auto;
-  margin-top: 2.5%;
-  margin-bottom: 5%;
-}
-
-.login button:hover {
-  border-color: var(--background-color);
-  background-color: #494949;
-  color: #373737;
-}
-
-.login button:disabled,
-button[disabled] {
-  background-color: #2e2e2e;
-  color: #e8e8e8;
-}
-
-.login h1 {
-  text-align: center;
-  margin-bottom: 2.5%;
-}
-
-.login input {
-  background-color: #2f2f30;
-  outline: 0;
-  border: none;
-  border-radius: 20px;
-  color: #fff;
-  padding: 10px 22px;
-  border: 2px solid #2f2f30;
-  min-width: 300px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-  margin-top: 2.5%;
-  margin-bottom: 5%;
-}
-
-.login input:focus {
-  border: 2px solid #3a3d41;
-}
-
-.login label {
-  font-size: 18px;
-}
-
-button{
-  color: var(--h1-color);
-  font-size: var(--h1-font-size);
-  font-weight: var(--h1-font-weight);
-}
-
-label{
-  color: var(--h1-color);
-  font-size: var(--h1-font-size);
-  font-weight: var(--h1-font-weight);
-}
-
+/* Animasyonlar */
 @keyframes fadeIn {
   0% {
     opacity: 0;
