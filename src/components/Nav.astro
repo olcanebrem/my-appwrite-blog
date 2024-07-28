@@ -2,71 +2,80 @@
 import Container from '@components/Container.astro';
 import '@styles/global.css';
 ---
-<nav>
-  
-
-<body class="light-mode">
- 
-  <script>
-      document.getElementById('theme-toggle').addEventListener('click', function() {
-      document.body.classList.toggle('light-mode');
-      document.body.classList.toggle('dark-mode');
-    });
-  </script>
-  <script src="src/lib/theme.js"></script>
-  <script src="src/lib/username.js"></script>
-  <Container class="flex justify-between items-center pt-6 pb-12 md:py-16">
-    <p>
-      <a href="/" class="text-4xl font-bold   hover:text-slate-900 dark:hover:text-gray-100 drop-shadow-[0_2px_0px_rgba(255,255,255,1)] dark:drop-shadow-[0_2px_0px_rgba(0,0,0,1)]">
-        Open<strong>USD</strong><br>.cloud
-      </a>
-      
-    </p>
-    <div style="background-color: .login; display: flex; justify-content: space-between;">
-          <p style="display: flex; justify-content: space-between; padding: 20px;">
-            <a href="/posts/new" class="inline-flex gap-2 items-center font-semibold  hover:text-blue-500">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20m-4-5v-1.65q0-.2.075-.387t.225-.338l5.225-5.2q.225-.225.5-.325t.55-.1q.3 0 .575.113t.5.337l.925.925q.2.225.313.5t.112.55q0 .275-.1.563t-.325.512l-5.2 5.2q-.15.15-.337.225T10.65 16H9q-.425 0-.712-.288T8 15m7.5-5.575l-.925-.925zm-6 5.075h.95l3.025-3.05l-.45-.475l-.475-.45L9.5 13.55zm3.525-3.525l-.475-.45l.925.925z"/></svg>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Astro Site</title>
+    <style>
+      /* Add your styles here */
+    </style>
+    <script>
+      // Immediately apply the saved theme
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.body.classList.add(theme + '-mode');
+      })();
+    </script>
+  </head>
+  <body class="light-mode">
+    <nav>
+      <Container class="flex justify-between items-center pt-6 pb-12 md:py-16">
+        <p>
+          <a href="/" class="text-4xl font-bold hover:text-slate-900 dark:hover:text-gray-100 drop-shadow-[0_2px_0px_rgba(255,255,255,1)] dark:drop-shadow-[0_2px_0px_rgba(0,0,0,1)]">
+            Open<strong>USD</strong><br>.cloud
+          </a>
+        </p>
+        <div style="display: flex; justify-content: space-between;">
+          <p style="padding: 20px;">
+            <a href="/posts/new" class="inline-flex gap-2 items-center font-semibold hover:text-blue-500">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20m-4-5v-1.65q0-.2.075-.387t.225-.338l5.225-5.2q.225-.225.5-.325t.55-.1q.3 0 .575.113t.5.337l.925.925q.2.225.313.5t.112.55q0 .275-.1.563t-.325.512l-5.2 5.2q-.15.15-.337.225T10.65 16H9q-.425 0-.712-.288T8 15m7.5-5.575l-.925-.925zm-6 5.075h.95l3.025-3.05l-.45-.475l-.475-.45L9.5 13.55zm3.525-3.525l-.475-.45l.925.925z"/>
+              </svg>
               New Post
             </a>
           </p>
-        <p style="display: flex; justify-content: space-between; padding: 20px;">
-          <a href="/login" class="inline-flex gap-2 items-center font-semibold  hover:text-blue-500">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20m-4-5v-1.65q0-.2.075-.387t.225-.338l5.225-5.2q.225-.225.5-.325t.55-.1q.3 0 .575.113t.5.337l.925.925q.2.225.313.5t.112.55q0 .275-.1.563t-.325.512l-5.2 5.2q-.15.15-.337.225T10.65 16H9q-.425 0-.712-.288T8 15m7.5-5.575l-.925-.925zm-6 5.075h.95l3.025-3.05l-.45-.475l-.475-.45L9.5 13.55zm3.525-3.525l-.475-.45l.925.925z"/></svg>
-            Sign In
-          </a>
-        </p>
-    </div>
-    <div>
-      
-        <h1 id="usernameDisplay">You are Surfing as <strong>Guest</strong></h1>
-    
-        <a href="/logout" id="logoutButton" class="inline-flex gap-2 items-center font-semibold  hover:text-blue-500" style="display: none;">Logout</a>
-      
-      
-    </div>
-  </Container>
-  <div>
-    
-    <center>
-     
-          
+          <p style="padding: 20px;">
+            <a href="/login" class="inline-flex gap-2 items-center font-semibold hover:text-blue-500">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20m-4-5v-1.65q0-.2.075-.387t.225-.338l5.225-5.2q.225-.225.5-.325t.55-.1q.3 0 .575.113t.5.337l.925.925q.2.225.313.5t.112.55q0 .275-.1.563t-.325.512l-5.2 5.2q-.15.15-.337.225T10.65 16H9q-.425 0-.712-.288T8 15m7.5-5.575l-.925-.925zm-6 5.075h.95l3.025-3.05l-.45-.475l-.475-.45L9.5 13.55zm3.525-3.525l-.475-.45l.925.925z"/>
+              </svg>
+              Sign In
+            </a>
+          </p>
+        </div>
+        <div>
+          <h1 id="usernameDisplay">You are Surfing as <strong>Guest</strong></h1>
+          <a href="/logout" id="logoutButton" class="inline-flex gap-2 items-center font-semibold hover:text-blue-500" style="display: none;">Logout</a>
+        </div>
+      </Container>
+      <div>
+        <center>
           <button id="theme-toggle">
-            
             <div class="command-box">
-              
               <custom-h1>Dark/Light Mode</custom-h1>
             </div>
           </button>
-        
-      </center>
-    </div>
-    
-  </div>
-    
-</nav>
+        </center>
+      </div>
+    </nav>
 
-
-
-
-
-
+    <script>
+      document.getElementById('theme-toggle').addEventListener('click', function() {
+        const body = document.body;
+        if (body.classList.contains('light-mode')) {
+          body.classList.remove('light-mode');
+          body.classList.add('dark-mode');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          body.classList.remove('dark-mode');
+          body.classList.add('light-mode');
+          localStorage.setItem('theme', 'light');
+        }
+      });
+    </script>
+    <script src="src/lib/theme.js"></script>
+    <script src="src/lib/username.js"></script>
+  </body>
+</html>
