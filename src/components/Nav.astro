@@ -12,11 +12,12 @@ import '@styles/global.css';
       /* Add your styles here */
     </style>
     <script>
-      // Immediately apply the saved theme
-      (function() {
-        const theme = localStorage.getItem('theme') || 'light';
-        document.body.classList.add(theme + '-mode');
-      })();
+     const themeToggle = document.getElementById('theme-toggle');
+if (themeToggle) {
+  themeToggle.addEventListener('click', function() {
+    // Event listener logic here
+  });
+}
     </script>
   </head>
   <body class="light-mode">
