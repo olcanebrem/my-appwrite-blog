@@ -81,7 +81,6 @@ import '@styles/global.css';
         font-size: 1rem;
         font-weight: 700;
         line-height: 1;
-        margin-bottom: 1em;
       }
       .text-gradient {
         background-image: var(--accent-gradient);
@@ -150,19 +149,18 @@ import '@styles/global.css';
           </p>
         </div>
         <div>
-          <h1 id="usernameDisplay">You are Surfing as <strong>Guest</strong></h1>
-          <a href="/logout" id="logoutButton" class="inline-flex gap-2 items-center font-semibold hover:text-blue-500" style="display: none;">Logout</a>
+          <center>
+            
+              <div class="command-box">
+                <div style="display: flex; align-items: center">
+                  <h1 id="usernameDisplay">You are Surfing as <strong>Guest</strong></h1>
+                  <a href="/logout" id="logoutButton" class="inline-flex gap-2 items-center font-semibold hover:text-blue-500" style="display: none;">Logout</a>
+                </div>
+              </div>
+          </center>
         </div>
       </Container>
-      <div>
-        <center>
-          <button id="theme-toggle">
-            <div class="command-box">
-              <custom-h1>Dark/Light Mode</custom-h1>
-            </div>
-          </button>
-        </center>
-      </div>
+     
     </nav>
 
     <script>

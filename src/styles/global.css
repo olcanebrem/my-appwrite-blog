@@ -52,8 +52,8 @@ a:hover {
 /* Genel kutu stilleri */
 .command-box, .index, .login {
   max-width: 500px; /* Genişliği artırdık */
-  width: 100%; /* Genişliği yüzde olarak belirledik */
-  border-radius: 1rem;
+  /* Genişliği yüzde olarak belirledik */
+  
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   border: 1px solid #e5e7eb;
@@ -62,10 +62,10 @@ a:hover {
   background-color: var(--background-color);
   color: var(--text-color);
   
-  margin-bottom: 100px;
+  
   margin-inline:auto;
   box-shadow: 0 4px 6px rgba(99, 98, 98, 0.75);
-  padding: 20px;
+  
   border-radius: 5px;
 }
 
