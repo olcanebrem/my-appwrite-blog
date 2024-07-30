@@ -40,7 +40,6 @@ h2 {
 /* Link stilleri */
 a {
   color: var(--a-color);
-  text-decoration: underline;
   transition: color 0.2s;
   font-size: 18px;
 }
@@ -151,7 +150,7 @@ a:hover {
 }
 
 .quote a {
-  text-decoration: underline;
+  
   color: rgba(30, 158, 243, 0.733);
 }
 
