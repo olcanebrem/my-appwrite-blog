@@ -5,16 +5,16 @@
   --h1-color: #6c2cee;
   --h2-color: #7952c7;
   --a-color: #a29aac;
-  --quote-hover: #938a8a;
+  --quote-hover: #8b8a93;
 }
 
 /* Dark tema */
 [data-theme="dark"] {
   --background-color: #303039;
   --text-color: #cfcce3;
-  --h1-color: #f6e3e3;
+  --h1-color: #e3ebf6;
   --h2-color: #f6e3e3;
-  --a-color: #938a8a;
+  --a-color: #8a8a93;
   --quote-hover: #938a8a;
 }
 
