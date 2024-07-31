@@ -1,0 +1,52 @@
+---
+
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag and Drop Example</title>
+  <style>
+    #dropzone {
+      width: 400px;
+      height: 200px;
+      border: 2px dashed #ccc;
+      border-radius: 4px;
+      text-align: center;
+      line-height: 200px;
+      color: #aaa;
+      background-color: #f9f9f9;
+    }
+    #dropzone.dragover {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <div
+    id="dropzone"
+    class="dropzone"
+  >
+    Dosyaları veya klasörleri buraya sürükleyin
+  </div>
+  <script type="module" src="src/lib/dropzone.js" defer></script>
+  
+  <script>
+    import { storage, ID } from '../lib/appwrite';
+
+  async function uploadFile(file) {
+  try {
+    const response = await storage.createFile(
+      '667f1f250030598fc056', // Your bucket ID
+      ID.unique(),
+      file
+    );
+    console.log(response); // Success
+  } catch (error) {
+    console.error(`Yükleme sırasında bir hata oluştu: ${error}`);
+  }
+}
+  </script>
+</body>
+</html>
