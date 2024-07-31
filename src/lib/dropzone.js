@@ -6,7 +6,8 @@ async function uploadFile(file) {
     const response = await storage.createFile(
       '667f1f250030598fc056', // Your bucket ID
       ID.unique(),
-      file
+      file,
+      progress(progress: UploadProgress) => void
     );
     console.log(response); // Success
   } catch (error) {

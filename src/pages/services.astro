@@ -31,22 +31,5 @@
     Dosyaları veya klasörleri buraya sürükleyin
   </div>
   <script type="module" src="src/lib/dropzone.js" defer></script>
-
-  <script>
-    import { storage, ID } from '../lib/appwrite';
-    
-  async function uploadFile(file: File) {
-  try {
-    const response = await storage.createFile(
-      '667f1f250030598fc056', // Your bucket ID
-      ID.unique(),
-      file
-    );
-    console.log(response); // Success
-  } catch (error) {
-    console.error(`Yükleme sırasında bir hata oluştu: ${error}`);
-  }
-}
-  </script>
 </body>
 </html>
