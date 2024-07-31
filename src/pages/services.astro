@@ -31,11 +31,11 @@
     Dosyaları veya klasörleri buraya sürükleyin
   </div>
   <script type="module" src="src/lib/dropzone.js" defer></script>
-  
+
   <script>
     import { storage, ID } from '../lib/appwrite';
-
-  async function uploadFile(file) {
+    
+  async function uploadFile(file: File) {
   try {
     const response = await storage.createFile(
       '667f1f250030598fc056', // Your bucket ID
