@@ -4,32 +4,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Drag and Drop Example</title>
-  <style>
-    #dropzone {
-      width: 400px;
-      height: 200px;
-      border: 2px dashed #ccc;
-      border-radius: 4px;
-      text-align: center;
-      line-height: 200px;
-      color: #aaa;
-      background-color: #f9f9f9;
-    }
-    #dropzone.dragover {
-      background-color: #e0e0e0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Editor & Uploader</title>
 </head>
 <body>
-  <div
-    id="dropzone"
-    class="dropzone"
-  >
-    Dosyaları veya klasörleri buraya sürükleyin
-  </div>
-  <script type="module" src="src/lib/dropzone.js" defer></script>
+    <div class="container">
+        <div id="dropzone" class="dropzone">
+            Dosyaları veya klasörleri buraya sürükleyin
+        </div>
+        <button id="downloadButton">Download File</button>
+        <ul id="file-list"></ul>
+    </div>
+
+    <div class="container">
+        <h1>File Editor</h1>
+        <button id="open-file">Open File</button>
+        <textarea id="file-content" placeholder="File content will appear here..." readonly></textarea>
+        <textarea id="new-content" placeholder="Enter new content to append..."></textarea>
+        <button id="save-file">Save File</button>
+    </div>
+
+    
 </body>
 </html>
+
+  <script type="module" src="src/lib/dropzone.js" defer></script>
+
+
+</body>
+</html>
+
+    <style>
+        body {
+            background-color: #282c34;
+            color: #61dafb;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: #1c1f26;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px 0;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #61dafb;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .dropzone {
+            background-color: #444;
+            border: 2px dashed #61dafb;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .dropzone.dragover {
+            background-color: #333;
+        }
+
+        textarea {
+            width: 100%;
+            border: 1px solid #61dafb;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            background-color: #1c1f26;
+            color: #61dafb;
+        }
+
+        button {
+            background-color: #61dafb;
+            color: #1c1f26;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #4cafb0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #444;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 5px 0;
+        }
+    </style>
