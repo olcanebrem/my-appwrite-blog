@@ -15,7 +15,7 @@
   <div class="container">
     <div id="dropzone" class="dropzone">Dosyaları veya klasörleri buraya sürükleyin</div>
     <button id="downloadButton">Show Dir</button>
-    <button id="createFolderButton">Create Folder</button>
+    <button id="createFolder">Create Folder</button>
     <ul id="file-list"></ul>
     <div id="preview-grid" class="preview-grid"></div>
 </div>
@@ -27,7 +27,11 @@
     <textarea id="new-content" placeholder="Enter new content to append..."></textarea>
     <button id="save-file">Save File</button>
 </div>
-
+<div class="container">
+  
+  <button id="requestAccessButton">Request Directory Access</button>
+  <button id="createFolderButton">Create Folder</button>
+</div>
       <script type="module" src="src/lib/dropzone.js" defer></script>
 </body>
 </html>
