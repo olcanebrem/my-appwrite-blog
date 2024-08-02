@@ -1,47 +1,26 @@
 import { storage, ID } from './appwrite'; // Yolu ve modülün doğru olduğundan emin olun
 
-// Upload file function
-async function uploadFile(file) {
+// Function to create a directory
+async function createDirectory(directoryHandle, folderName) {
   try {
-    const response = await storage.createFile(
-      '667f1f250030598fc056', // Your bucket ID
-      ID.unique(),
-      file
-      
-    );
-    console.log(response); // Success
+    const newDirHandle = await directoryHandle.getDirectoryHandle(folderName, { create: true });
+    console.log(`Directory '${folderName}' created successfully.`);
+    return newDirHandle;
   } catch (error) {
-    console.error(`Yükleme sırasında bir hata oluştu: ${error}`);
+    console.error(`Error creating directory: ${error}`);
   }
 }
 
-// Handle drag over
-const handleDragOver = (event) => {
-  event.preventDefault();
-  event.stopPropagation();
-  document.getElementById('dropzone').classList.add('dragover');
-};
-
-// Handle drag leave
-const handleDragLeave = (event) => {
-  event.preventDefault();
-  event.stopPropagation();
-  document.getElementById('dropzone').classList.remove('dragover');
-};
-
-// Handle drop
-const handleDrop = async (event) => {
-  event.preventDefault();
-  event.stopPropagation();
-  document.getElementById('dropzone').classList.remove('dragover');
-
-  const files = event.dataTransfer.files;
-
-  for (const file of files) {
-    console.log(`Dropped file: ${file.name}`);
-    await uploadFile(file);
+// Function to request directory access and create a folder
+async function requestDirectoryAccess() {
+  try {
+    const dirHandle = await window.showDirectoryPicker();
+    console.log('Directory access granted.');
+    const newDirHandle = await createDirectory(dirHandle, 'NewFolder');
+  } catch (error) {
+    console.error(`Error accessing directory: ${error}`);
   }
-};
+}
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', () => {
@@ -49,7 +28,95 @@ document.addEventListener('DOMContentLoaded', () => {
   dropzone.addEventListener('dragover', handleDragOver);
   dropzone.addEventListener('dragleave', handleDragLeave);
   dropzone.addEventListener('drop', handleDrop);
+
+  const createFolderButton = document.getElementById('createFolderButton');
+  createFolderButton.addEventListener('click', requestDirectoryAccess);
 });
+
+
+// Fonksiyon: Dosyayı yükleyip önizleme ekler
+const previewContainer = document.getElementById('preview-grid');
+
+function createPreviewElement(file) {
+    const previewItem = document.createElement('div');
+    previewItem.classList.add('preview-item');
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.textContent = '✕';
+    deleteBtn.addEventListener('click', () => {
+        previewContainer.removeChild(previewItem);
+    });
+
+    previewItem.appendChild(deleteBtn);
+
+    if (file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            previewItem.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+    } else {
+        previewItem.textContent = file.name;
+    }
+
+    return previewItem;
+}
+
+async function uploadFile(file) {
+    try {
+        const response = await storage.createFile(
+            '667f1f250030598fc056', // Your bucket ID
+            ID.unique(),
+            file
+        );
+        console.log(response); // Success
+    } catch (error) {
+        console.error(`Yükleme sırasında bir hata oluştu: ${error}`);
+    }
+}
+
+// Handle drag over
+const handleDragOver = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    document.getElementById('dropzone').classList.add('dragover');
+};
+
+// Handle drag leave
+const handleDragLeave = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    document.getElementById('dropzone').classList.remove('dragover');
+};
+
+// Handle drop
+const handleDrop = async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    document.getElementById('dropzone').classList.remove('dragover');
+
+    const files = event.dataTransfer.files;
+
+    for (const file of files) {
+        console.log(`Dropped file: ${file.name}`);
+        await uploadFile(file);
+        const previewElement = createPreviewElement(file);
+        previewContainer.appendChild(previewElement);
+    }
+};
+
+// Event listeners
+document.addEventListener('DOMContentLoaded', () => {
+    const dropzone = document.getElementById('dropzone');
+    dropzone.addEventListener('dragover', handleDragOver);
+    dropzone.addEventListener('dragleave', handleDragLeave);
+    dropzone.addEventListener('drop', handleDrop);
+});
+
+
 
 
 // Download file function
