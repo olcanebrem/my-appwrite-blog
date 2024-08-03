@@ -1,4 +1,4 @@
-import db from "@astrojs/db";
+
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
