@@ -62,13 +62,6 @@ export const navMenuConfig: NavMenuConfig = {
           image: "/images/examples/static-blog.jpg",
         },
         {
-          title: "Docs",
-          href: "/docs/getting-started",
-          description:
-            "A Markdown/MDX docs site built using Content Collections.",
-          image: "/images/examples/documentation.jpg",
-        },
-        {
           title: "Open",
           href: "/open",
           description:
@@ -80,29 +73,17 @@ export const navMenuConfig: NavMenuConfig = {
       ],
     },
   ],
-  links: [
-    {
-      title: "Linnks",
-      items: [
-        {
-          title: "Docs",
-          href: "/blog",
-          description: "A Markdown/MDX blog built using Content Collections.",
-          image: "/images/examples/static-blog.jpg",
-        },
-        
-      ],
-    },
-  ],
+ 
   Artstation: [
     {
       title: "Artstation",
       items: [
         {
-          title: "SdddBlog",
-          href: "/blog",
+          title: "SddddBlog",
+          href: "https://www.artstation.com/olcanebrem",
           description: "A Markdown/MDX blog built using Content Collections.",
           image: "/images/examples/static-blog.jpg",
+          launched: true,
         },
         
       ],

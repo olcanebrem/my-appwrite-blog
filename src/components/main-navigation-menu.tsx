@@ -15,7 +15,7 @@ import { navMenuConfig } from "@/config/nav-menu";
 import type { MenuItem } from "@/types";
 
 const links = navMenuConfig.links;
-
+const Artstation = navMenuConfig.Artstation[0];
 const OpenUSD = navMenuConfig.OpenUSD[0];
 
 export function MainNavigationMenu() {
@@ -54,7 +54,14 @@ export function MainNavigationMenu() {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          
+        <NavigationMenuTrigger>{Artstation.title}</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              {Artstation.items?.map((open) => (
+                <ListItem key={open.title} {...open} />
+              ))}
+            </ul>
+          </NavigationMenuContent>
         </NavigationMenuItem>
 
         <NavigationMenuItem>

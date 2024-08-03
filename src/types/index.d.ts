@@ -51,7 +51,8 @@ export type MarketingConfig = {
 export type NavMenuConfig = {
   
   OpenUSD: SidebarNavItem[];
-  links: MenuItem[];
+  links: SidebarNavItem[];
+  Artstation: SidebarNavItem[];
 };
 
 export type DashboardConfig = {

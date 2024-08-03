@@ -88,7 +88,7 @@ export const docsConfig: DocsConfig = {
           disabled: true,
         },
         {
-          title: "Blog with Astro DB",
+          title: "Artstation",
           href: "/docs/in-progress",
           disabled: true,
         },
