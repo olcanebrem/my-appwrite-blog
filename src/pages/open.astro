@@ -33,6 +33,7 @@ const images = [
         {images.map(src => (
           <img src={src} alt="Art Image">
         ))}
+      </div>
     </div>
   </Layout>
 
@@ -62,49 +63,92 @@ const images = [
 </MainLayout>
 
 
-<style>
-  .artstation-clone-container {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-  }
+<style>.artstation-clone-container {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
 
-  .grid-container {
-    width: 100%;
-    max-width: 500px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.grid-container {
+  width: 100%;
+  max-width: 1500px; /* İsteğe bağlı olarak, maksimum genişlik sınırı ekleyebilirsiniz */
+  padding: 20px;
+}
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+@media (min-width: 600px) {
   .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
   }
+}
 
-  .grid img {
-    width: 100%;
-    height: auto;
-    max-width: 500px; /* Maximum width for images */
-    cursor: pointer;
-    border-radius: 10px;
-    transition: transform 0.2s;
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(1, minmax(150px, 1fr));
   }
+}
+.grid img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
 
-  .grid img:hover {
-    transform: scale(1.05);
-  }
+.grid img:hover {
+  transform: scale(1.05);
+}
 
-  @media (max-width: 500px) {
-    .grid {
-      grid-template-columns: 1fr; /* Tek sütuna düş */
-    }
-  }
+/* Popup stil */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-content {
+  width: 90%; /* Sayfa genişliğinin %90'ı */
+  height: auto; /* Yüksekliği görüntü oranına göre ayarlayın */
+  max-width: 800px; /* Maksimum genişlik sınırı, isteğe bağlı */
+  max-height: 90%; /* Maksimum yükseklik sınırı, isteğe bağlı */
+  background-color: #fff; /* Arka plan rengi */
+  border-radius: 10px; /* Köşe yuvarlatma */
+  overflow: hidden; /* Taşan içeriği gizle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup img {
+  width: 100%;
+  height: auto;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 </style>

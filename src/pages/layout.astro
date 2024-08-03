@@ -21,25 +21,26 @@
       const popup = document.getElementById('popup');
       const popupImg = document.getElementById('popupImg');
       const closePopup = document.getElementById('closePopup');
-
+    
       images.forEach(img => {
         img.addEventListener('click', () => {
           popup.style.display = 'flex';
           popupImg.src = img.src;
         });
       });
-
+    
       closePopup.addEventListener('click', () => {
         popup.style.display = 'none';
       });
-
+    
       popup.addEventListener('click', (e) => {
         if (e.target !== popupImg) {
           popup.style.display = 'none';
         }
       });
     });
-  </script>
+    </script>
+    
 </body>
 </html>
 
