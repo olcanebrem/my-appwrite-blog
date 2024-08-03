@@ -54,3 +54,4 @@ export const hobbies: HobbiesProps[] = [
     alt: "dalmatian",
   },
 ];
+

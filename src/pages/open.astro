@@ -1,0 +1,110 @@
+---
+import Layout from './layout.astro';
+import MainLayout from "@/layouts/main-layout.astro";
+import { WaitlistForm } from "@/components/forms/waitlist-form";
+import { Icon } from "astro-icon/components";
+
+const images = [
+  'https://cdna.artstation.com/p/assets/covers/images/072/122/530/smaller_square/olcan-ebrem-olcan-ebrem-layer-7-copy.jpg?1706662283',
+  'https://cdnb.artstation.com/p/assets/covers/images/061/731/229/smaller_square/olcan-ebrem-olcan-ebrem-1image.jpg?1681486448',
+  'https://cdnb.artstation.com/p/assets/images/images/037/926/239/20210522113420/smaller_square/olcan-ebrem-anime4.jpg?1621701260',
+  'https://cdnb.artstation.com/p/assets/images/images/048/721/427/20220423201858/smaller_square/olcan-ebrem-stormwarfare-2-jpg.jpg?1650763138',
+  'https://cdnb.artstation.com/p/assets/images/images/037/428/367/20210506162539/smaller_square/olcan-ebrem-1581849015650-jpg-02.jpg?1620336339',
+  'https://cdnb.artstation.com/p/assets/images/images/033/124/197/smaller_square/olcan-ebrem-h2anfendi.jpg?1608493439',
+  'https://cdnb.artstation.com/p/assets/images/images/027/627/215/20200613145525/smaller_square/olcan-ebrem-sert-cakici.jpg?1592078125',
+  'https://cdna.artstation.com/p/assets/images/images/031/816/370/20201106070353/smaller_square/olcan-ebrem-hukumdar-recovered.jpg?1604667833',
+  'https://cdna.artstation.com/p/assets/images/images/026/375/746/20200504124800/smaller_square/olcan-ebrem-hukumet.jpg?1588614481',
+  'https://cdnb.artstation.com/p/assets/covers/images/025/694/995/20200411153505/smaller_square/olcan-ebrem-ka2ban-jpg.jpg?1586637306',
+  'https://cdnb.artstation.com/p/assets/images/images/023/114/823/20200104084458/smaller_square/olcan-ebrem-artboard-6.jpg?1578149098',
+  // Daha fazla resim ekleyin
+];
+---
+
+<MainLayout
+  title="Waitlist"
+  description="portfolio"
+  mainClass="bg-background-200"
+>
+
+<Layout>
+  <div class="artstation-clone-container">
+    <div class="grid-container">
+      <div class="grid">
+        {images.map(src => (
+          <img src={src} alt="Art Image">
+        ))}
+    </div>
+  </Layout>
+
+  <div class="relative flex w-full min-h-svh items-center justify-center">
+    <div
+      class="px-4 py-5 sm:p-6 bg-background border rounded-xl overflow-hidden -mt-36"
+    >
+      <div class="flex flex-col gap-y-4 w-full max-w-sm">
+        <div class="space-y-3">
+          <Icon name="stars-outline" class="size-10" />
+          <h1 class="text-2xl font-heading tracking-wide">Get early access!</h1>
+          <p class="text-sm text-muted-foreground">
+            Excited to join the waitlist?
+            <br />
+            Fill out the form below to secure your spot and be the first to know
+            when we launch!
+            <br />
+            Check <a href="/newsletter" class="underline">here</a> for a form with
+            counter.
+          </p>
+        </div>
+
+        <WaitlistForm client:load />
+      </div>
+    </div>
+  </div>
+</MainLayout>
+
+
+<style>
+  .artstation-clone-container {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .grid-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .grid img {
+    width: 100%;
+    height: auto;
+    max-width: 500px; /* Maximum width for images */
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.2s;
+  }
+
+  .grid img:hover {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 500px) {
+    .grid {
+      grid-template-columns: 1fr; /* Tek sütuna düş */
+    }
+  }
+</style>

@@ -49,8 +49,7 @@ export type MarketingConfig = {
 };
 
 export type NavMenuConfig = {
-  pagesNav: SidebarNavItem[];
-  examplesNav: SidebarNavItem[];
+  
   OpenUSD: SidebarNavItem[];
   links: MenuItem[];
 };
