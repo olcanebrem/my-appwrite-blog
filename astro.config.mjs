@@ -25,7 +25,6 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    db(),
     simpleStackForm(),
   ],
   output: "hybrid",
