@@ -3,6 +3,11 @@ import { databases } from '@/lib/appwrite';
 import Layout from '@/layouts/Layout.astro';
 import Container from '@/components/Container.astro';
 import siteMetadata from '@/utils/siteMetadata.js';
+import PageHeader from "@/components/page-header.astro";
+import { Badge } from "@/components/ui/badge";
+import MainLayout from "@/layouts/main-layout.astro";
+import { formatDate } from "@/lib/utils";
+import { getCollection } from "astro:content";
 
 // Veritabanından sıralı şekilde gönderileri çek
 const MAX_DISPLAY = 10;
@@ -19,37 +24,41 @@ const displayedPosts = posts.reverse().slice(0, MAX_DISPLAY);
 console.log('Displaying posts');
 
 ---
-<Layout title="My Blog">
-  <Container>
-    <link rel="stylesheet" href="src/styles/global.css">
-    
-    <img src="https://global.discourse-cdn.com/business6/uploads/aousd/original/1X/2c0bb0182eb513b680d216c19a1f308a15cac121.png" alt="Film TV Video Logo">
-    <h1 class="text-balance font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[66px]" data-astro-source-file="E:/WEB-DEV/astro-nomy-master/src/components/sections/hero-landing.astro" data-astro-source-loc="24:6">
-      Kick off with a bang with  <span class="font-extrabold" data-astro-source-file="E:/WEB-DEV/astro-nomy-master/src/components/sections/hero-landing.astro" data-astro-source-loc="26:64">
-      SaaS
-      </span> </h1>
+<MainLayout title="My Blog">
+  <section class="container max-w-screen-lg space-y-6 pt-12">
+    <PageHeader/>
 
-      <h2>You've been welcomed by <span class="text-gradient">Olcan</span></h2>
-    <link rel="stylesheet" href="src/styles/global.css" />
-    <div class="divide-y divide-gray-200 dark:divide-gray-700">
-      <div class="space-y-2 pb-8 pt-6 md:space-y-5">
-        <h1 class="text-3xl font-extrabold leading-9 tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-          Latest
-        </h1>
-        <p class="text-lg leading-7 text-gray-500 dark:text-gray-400">
-          {siteMetadata.description}
-        </p>
-      </div>
-      <p class="instructions">
-        To get started, open the directory <code>src/pages</code> in your project.<br />
-        <strong>Code Challenge:</strong> Tweak the "Welcome to Cloud" message above.
-      </p>
-      <ul class="instructions divide-y divide-gray-200 dark:divide-gray-700">
-        {displayedPosts.length === 0 && <li>No posts found.</li>}
-        {displayedPosts.map((post) => {
-          const { username, slug, $createdAt, title } = post;
-          return (
-            <li class="py-4 ">
+    
+    <Container>
+      <link rel="stylesheet" href="src/styles/global.css">
+      
+      <img src="https://global.discourse-cdn.com/business6/uploads/aousd/original/1X/2c0bb0182eb513b680d216c19a1f308a15cac121.png" alt="Film TV Video Logo">
+      <h1 class="text-balance font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[66px]" data-astro-source-file="E:/WEB-DEV/astro-nomy-master/src/components/sections/hero-landing.astro" data-astro-source-loc="24:6">
+        Kick off with a bang with  <span class="font-extrabold" data-astro-source-file="E:/WEB-DEV/astro-nomy-master/src/components/sections/hero-landing.astro" data-astro-source-loc="26:64">
+          SaaS
+        </span> </h1>
+        
+        <h2>You've been welcomed by <span class="text-gradient">Olcan</span></h2>
+        <link rel="stylesheet" href="src/styles/global.css" />
+        <div class="divide-y divide-gray-200 dark:divide-gray-700">
+          <div class="space-y-2 pb-8 pt-6 md:space-y-5">
+            <h1 class="text-3xl font-extrabold leading-9 tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+              Latest
+            </h1>
+            <p class="text-lg leading-7 text-gray-500 dark:text-gray-400">
+              {siteMetadata.description}
+            </p>
+          </div>
+          <p class="instructions">
+            To get started, open the directory <code>src/pages</code> in your project.<br />
+            <strong>Code Challenge:</strong> Tweak the "Welcome to Cloud" message above.
+          </p>
+          <ul class="instructions divide-y divide-gray-200 dark:divide-gray-700">
+            {displayedPosts.length === 0 && <li>No posts found.</li>}
+            {displayedPosts.map((post) => {
+              const { username, slug, $createdAt, title } = post;
+              return (
+                <li class="py-4 ">
               <article>
                 <div class="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                   <dl>
@@ -102,25 +111,26 @@ console.log('Displaying posts');
         <button type="button" class="btn-done">Tamam</button>
         <button type="button" class="btn-close">
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-x h-4 w-4"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-x h-4 w-4"
           >
-            <path d="M18 6 6 18"></path>
-            <path d="m6 6 12 12"></path>
-          </svg>
-        </button>
-      </div>
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
     </div>
-    <script type="module" src="src/lib/toast.js"></script>
-    <style>
+  </div>
+</section>
+  <script type="module" src="src/lib/toast.js"></script>
+  <style>
       :root {
         --accent-gradient: linear-gradient(50deg, #cc5de8, #845ef7, #5c7cfa, #339af0, #22b8cf);
         --accent-light: 255, 255, 255;
@@ -183,4 +193,4 @@ console.log('Displaying posts');
       }
     </style>
   </Container>
-</Layout>
+</MainLayout>
