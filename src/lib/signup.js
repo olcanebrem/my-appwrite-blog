@@ -1,5 +1,5 @@
 import { AppwriteException, ID ,Account} from "appwrite";
-import { client } from "@lib/appwrite";
+import { client } from "@/lib/appwrite";
 
 // Initialize Appwrite client
 
