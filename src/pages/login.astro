@@ -1,43 +1,39 @@
 ---
-import UserAuthForm from "@/components/forms/user-auth-form.astro";
-import { buttonVariants } from "@/components/ui/button";
-import AuthLayout from "@/layouts/auth-layout.astro";
-import { cn } from "@/lib/utils";
+import Layout from '@layouts/Layout.astro';
 ---
 
-<AuthLayout title="Login" description="Login">
-  <a
-    href="/register"
-    slot="right-corner"
-    class={cn(buttonVariants({ variant: "ghost" }))}
-  >
-    Sign up
-  </a>
-
-  
-  <div class="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-96">
-    <div class="flex flex-col space-y-2 text-center">
-      <h1 class="text-2xl font-semibold tracking-tight">Welcome back !</h1>
-      <p class="text-sm text-muted-foreground">
-        Enter your email below to create your account
-      </p>
+<Layout>
+  <div class="login" >
+    <script src="src/lib/signin.js"></script>
+    <h1>Login</h1>
+    <br />
+    <form id="login-form">
+      
+        <input type="email" id="email" autocomplete="email" placeholder="E-mail" required><br><br>
+      
+      <br />
+      
+        <input type="password" id="password" placeholder="password" required><br><br>
+      
+      <br />
+        <button type="submit"> Sign In </button>  
+      
+    </form>
+    <br/>
+    <div class="quote">
+      <center>
+        <span>Kaydın Yokmu?</span>
+        <span>Hemen Oluştur!</span>
+       
+      </center>
     </div>
-
-    <UserAuthForm />
+    <div style="text-align: center;">
     
-    <p class="px-8 text-center text-sm text-muted-foreground">
-      By clicking continue, you agree to our{" "}
-      <a href="/terms" class="underline underline-offset-4 hover:text-primary">
-        Terms of Service
-      </a>{" "}
-       and{" "}
-      <a
-        href="/privacy"
-        class="underline underline-offset-4 hover:text-primary"
-      >
-        Privacy Policy
-      </a>
-       .
-    </p>
+      <form action="/signup"  accept-charset="UTF-8" method="POST">
+        <br />
+        <button type="submit" class="py-2center; flex; px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Sign Up</button>
+      </form>
+    </div>
   </div>
-</AuthLayout>
+</Layout>
+  

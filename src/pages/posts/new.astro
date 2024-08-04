@@ -1,0 +1,105 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/components/Container.astro';
+---
+<Layout title="New Post - My Blog">
+	<Container>
+    <div class="instructions">
+
+      <h2 class="text-2xl font-bold mb-5">New Post</h2>
+      <script  src="src/lib/main.js"></script>
+      <form id="post-form"  method="POST">
+        <div class="mb-6">
+          <label class="block text-sm font-semibold mb-3" for="title">Title</label>
+          <input
+          id="title"
+          class="block w-full text-slate-900 border-slate-400 rounded focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          type="text"
+          name="title"
+          />
+        </div>
+        <div class="mb-6">
+          <label class="block text-sm font-semibold mb-3" for="slug">Slug</label>
+          <input
+          id="slug"
+          class="block w-full text-slate-900 border-slate-400 rounded focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          type="text"
+          name="slug"
+          />
+        </div>
+        <div class="mb-6">
+          <label class="block text-sm font-semibold mb-1" for="content">Content</label>
+          <p class="text-xs text-slate-600 italic mb-3">Supports Markdown</p>
+          <textarea
+          id="content"
+          class="block w-full min-h-80 text-slate-900 border-slate-400 rounded focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          name="content"
+          />
+        </div>
+        <button class="inline-block rounded py-2.5 px-6 text-sm font-bold uppercase text-white bg-slate-600 hover:bg-slate-500 dark:bg-slate-500 dark:hover:bg-slate-400">Submit</button>
+      </form>
+    </div>
+  </Container>
+</Layout>
+<style>
+  :root {
+    --accent-gradient: linear-gradient(50deg, #ff6b6b, #f06595, #cc5de8, #845ef7, #5c7cfa, #339af0, #22b8cf);
+    --accent-light: 255, 255, 255;
+    --accent-dark: 0, 0, 0;
+  }
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  .astro-a {
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translatex(-50%);
+    width: 220px;
+    height: auto;
+    z-index: -1;
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1em;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    margin-bottom: 2rem;
+    border: 1px solid rgba(var(--accent-light), 25%);
+    background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  .instructions code {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: rgba(var(--accent-light), 12%);
+    color: rgb(var(--accent-light));
+    border-radius: 4px;
+    padding: 0.3em 0.4em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent-light));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
+</style>
