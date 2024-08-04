@@ -76,14 +76,14 @@ export const navMenuConfig: NavMenuConfig = {
  
   Artstation: [
     {
-      title: "Artstation",
+      title: "Portfolio",
       items: [
         {
-          title: "SddddBlog",
+          title: "Artstation",
           href: "https://www.artstation.com/olcanebrem",
-          description: "A Markdown/MDX blog built using Content Collections.",
+          description: "works with details and extras.",
           image: "/images/examples/static-blog.jpg",
-          launched: true,
+          launched: false,
         },
         
       ],
