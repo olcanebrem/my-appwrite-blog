@@ -1,13 +1,9 @@
 ---
 import { databases } from '@/lib/appwrite';
-import Layout from '@/layouts/Layout.astro';
 import Container from '@/components/Container.astro';
 import siteMetadata from '@/utils/siteMetadata.js';
-import PageHeader from "@/components/page-header.astro";
-import { Badge } from "@/components/ui/badge";
 import MainLayout from "@/layouts/main-layout.astro";
-import { formatDate } from "@/lib/utils";
-import { getCollection } from "astro:content";
+import Layout from '@/layouts/Layout.astro';
 
 // Veritabanından sıralı şekilde gönderileri çek
 const MAX_DISPLAY = 10;
@@ -24,9 +20,10 @@ const displayedPosts = posts.reverse().slice(0, MAX_DISPLAY);
 console.log('Displaying posts');
 
 ---
+<Layout title="New Post - My Blog">
+ 
 <MainLayout title="My Blog">
-  <section class="container max-w-screen-lg space-y-6 pt-12">
-    
+  
 
     
     <Container>
@@ -130,6 +127,11 @@ console.log('Displaying posts');
   </div>
 </section>
 
+<MainLayout
+  title="Waitlist"
+  description="portfolio"
+  mainClass="bg-background-200"
+></MainLayout>
   <script type="module" src="src/lib/toast.js"></script>
 
 </Container>
@@ -146,7 +148,7 @@ console.log('Displaying posts');
         padding: 1rem;
         width: 800px;
         max-width: calc(100% - 2rem);
-        color: white;
+        color: rgb(0, 0, 0);
         font-size: 20px;
         line-height: 1.6;
       }
