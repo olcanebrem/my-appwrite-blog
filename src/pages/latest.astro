@@ -1,0 +1,186 @@
+---
+import { databases } from 'src/lib/appwrite';
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/components/Container.astro';
+import siteMetadata from '@/utils/siteMetadata.js';
+
+// Veritabanından sıralı şekilde gönderileri çek
+const MAX_DISPLAY = 10;
+
+const response = await databases.listDocuments(
+  import.meta.env.PUBLIC_APPWRITE_DATABASE_ID,
+  import.meta.env.PUBLIC_APPWRITE_COLLECTION_ID,
+);
+
+const { documents: posts } = response;
+
+// Gönderileri dilimle ve ters çevir
+const displayedPosts = posts.reverse().slice(0, MAX_DISPLAY);
+console.log('Displaying posts');
+
+---
+<Layout title="My Blog">
+  <Container>
+    <link rel="stylesheet" href="src/styles/global.css">
+    
+    <img src="https://global.discourse-cdn.com/business6/uploads/aousd/original/1X/2c0bb0182eb513b680d216c19a1f308a15cac121.png" alt="Film TV Video Logo">
+    <h1 class="text-balance font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[66px]" data-astro-source-file="E:/WEB-DEV/astro-nomy-master/src/components/sections/hero-landing.astro" data-astro-source-loc="24:6">
+      Kick off with a bang with  <span class="font-extrabold" data-astro-source-file="E:/WEB-DEV/astro-nomy-master/src/components/sections/hero-landing.astro" data-astro-source-loc="26:64">
+      SaaS
+      </span> </h1>
+
+      <h2>You've been welcomed by <span class="text-gradient">Olcan</span></h2>
+    <link rel="stylesheet" href="src/styles/global.css" />
+    <div class="divide-y divide-gray-200 dark:divide-gray-700">
+      <div class="space-y-2 pb-8 pt-6 md:space-y-5">
+        <h1 class="text-3xl font-extrabold leading-9 tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          Latest
+        </h1>
+        <p class="text-lg leading-7 text-gray-500 dark:text-gray-400">
+          {siteMetadata.description}
+        </p>
+      </div>
+      <p class="instructions">
+        To get started, open the directory <code>src/pages</code> in your project.<br />
+        <strong>Code Challenge:</strong> Tweak the "Welcome to Cloud" message above.
+      </p>
+      <ul class="instructions divide-y divide-gray-200 dark:divide-gray-700">
+        {displayedPosts.length === 0 && <li>No posts found.</li>}
+        {displayedPosts.map((post) => {
+          const { username, slug, $createdAt, title } = post;
+          return (
+            <li class="py-4 ">
+              <article>
+                <div class="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
+                  <dl>
+                    <dt class="sr-only">Published on</dt>
+                    <dd class="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                      {new Date($createdAt).toLocaleDateString()}
+                    </dd>
+                  </dl>
+                  <div class="space-y-2 xl:col-span-3">
+                    <div>
+                      <div>
+                        <h2 class="text-2xl font-bold leading-8 tracking-tight">
+                          <a href={`/posts/${slug}`}>{title}</a>
+                        </h2>
+                      </div>
+                      <div class="prose max-w-none text-gray-500 dark:text-gray-400">
+                        {post.summary}
+                      </div>
+                    </div>
+                    <div class="text-base font-medium leading-6">
+                        <a href={`/posts/${slug}`} class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400" aria-label={`Read more: "${title}"`}>
+                          Read more &rarr;
+                        </a>
+                        <div>
+                          <h2 id="usernameDisplay">{username}</h2>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                
+              </article>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+    {posts.length > MAX_DISPLAY && (
+      <div class="flex justify-end text-base font-medium leading-6">
+        <a href="/blog" class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400" aria-label="All posts">
+          All Posts &rarr;
+        </a>
+      </div>
+    )}
+    <div id="toast" class="toast">
+      <div class="toast-content">
+        <div class="message">
+          <div class="text-sm font-semibold">Siteye hoş geldin</div>
+          <div class="text-sm opacity-90">Sen üye olana kadar seni ziyaretçi pozisyonunda tutuyoruz.</div>
+        </div>
+        <button type="button" class="btn-done">Tamam</button>
+        <button type="button" class="btn-close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-x h-4 w-4"
+          >
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script type="module" src="src/lib/toast.js"></script>
+    <style>
+      :root {
+        --accent-gradient: linear-gradient(50deg, #cc5de8, #845ef7, #5c7cfa, #339af0, #22b8cf);
+        --accent-light: 255, 255, 255;
+        --accent-dark: 0, 0, 0;
+      }
+      main {
+        margin: auto;
+        padding: 1rem;
+        width: 800px;
+        max-width: calc(100% - 2rem);
+        color: white;
+        font-size: 20px;
+        line-height: 1.6;
+      }
+      .astro-a {
+        position: absolute;
+        top: -32px;
+        left: 50%;
+        transform: translatex(-50%);
+        width: 220px;
+        height: auto;
+        z-index: -1;
+      }
+      h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 1em;
+      }
+      .text-gradient {
+        background-image: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400%;
+        background-position: 0%;
+      }
+      .instructions {
+        margin-bottom: 2rem;
+        border: 1px solid rgba(var(--accent-light), 25%);
+        background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+        padding: 1.5rem;
+        border-radius: 8px;
+      }
+      .instructions code {
+        font-size: 0.8em;
+        font-weight: bold;
+        background: rgba(var(--accent-light), 12%);
+        color: rgb(var(--accent-light));
+        border-radius: 4px;
+        padding: 0.3em 0.4em;
+      }
+      .instructions strong {
+        color: rgb(var(--accent-light));
+      }
+      .link-card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+        gap: 2rem;
+        padding: 0;
+      }
+    </style>
+  </Container>
+</Layout>
