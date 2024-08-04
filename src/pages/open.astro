@@ -1,11 +1,9 @@
 ---
-import Layout from '@/pages/layout.astro';
+
 import MainLayout from "@/layouts/main-layout.astro";
 import { WaitlistForm } from "@/components/forms/waitlist-form";
 import { Icon } from "astro-icon/components";
 import Layout from '@/layouts/Layout.astro';
-import Container from '@/components/Container.astro';
-
 const images = [
   'https://cdna.artstation.com/p/assets/covers/images/072/122/530/smaller_square/olcan-ebrem-olcan-ebrem-layer-7-copy.jpg?1706662283',
   'https://cdnb.artstation.com/p/assets/covers/images/061/731/229/smaller_square/olcan-ebrem-olcan-ebrem-1image.jpg?1681486448',
@@ -24,7 +22,7 @@ const images = [
 
 <Layout title="New Post - My Blog">
   <MainLayout>
-  <Container>
+  
 
 
   <div class="artstation-clone-container">
@@ -35,7 +33,7 @@ const images = [
         ))}
       </div>
     </div>
-  </Layout>
+  
   
 
   <div class="relative flex w-full min-h-svh items-center justify-center">
@@ -63,7 +61,7 @@ const images = [
   </div>
   </Container>
 
-
+</Layout>
 <style>.artstation-clone-container {
   font-family: Arial, sans-serif;
   margin: 0;
