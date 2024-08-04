@@ -63,7 +63,7 @@ export const navMenuConfig: NavMenuConfig = {
         },
         {
           title: "Open",
-          href: "/open",
+          href: "/",
           description:
             "Fetch anime content from an graphql endpoint. Tabs component.",
           image: "/images/examples/animes.jpg",
